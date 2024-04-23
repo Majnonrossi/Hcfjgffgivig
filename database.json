@@ -94,7 +94,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 18544,
+      "exp": 18701,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -71174,6 +71174,25 @@
       "registered": false,
       "role": "*NOVATO(A)* 🪤",
       "exp": null
+    },
+    "212638756657@s.whatsapp.net": {
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "banned": false,
+      "BannedReason": "",
+      "Banneduser": false,
+      "limit": 2,
+      "level": 0,
+      "money": 150,
+      "premium": false,
+      "premiumTime": 0,
+      "name": "أستاذ المعلوميات",
+      "GBLanguage": 0,
+      "regTime": -1,
+      "registered": false,
+      "role": "*NOVATO(A)* 🪤",
+      "exp": 186
     }
   },
   "chats": {
@@ -72205,6 +72224,31 @@
       "antitoxic": true,
       "reaction": true,
       "expired": 0
+    },
+    "212638756657@s.whatsapp.net": {
+      "isBanned": false,
+      "welcome": true,
+      "detect": true,
+      "sWelcome": "",
+      "sBye": "",
+      "sPromote": "",
+      "sDemote": "",
+      "delete": true,
+      "antiver": true,
+      "modoadmin": false,
+      "antiLink": false,
+      "antiLink2": false,
+      "antiTiktok": false,
+      "antiYoutube": false,
+      "antiTelegram": false,
+      "antiFacebook": false,
+      "antiInstagram": false,
+      "antiTwitter": false,
+      "antifake": false,
+      "antiTraba": true,
+      "antitoxic": true,
+      "reaction": true,
+      "expired": 0
     }
   },
   "stats": {
@@ -72221,10 +72265,10 @@
       "lastSuccess": 1713477646608
     },
     "ai-bardimg.js": {
-      "total": 8,
-      "success": 4,
-      "last": 1713218549746,
-      "lastSuccess": 1713218549746
+      "total": 9,
+      "success": 5,
+      "last": 1713880291027,
+      "lastSuccess": 1713880291027
     },
     "ai-chatgpt.js": {
       "total": 9,
@@ -72269,10 +72313,10 @@
       "lastSuccess": 1713390748512
     },
     "ai-sticker.js": {
-      "total": 3,
-      "success": 3,
-      "last": 1707644642573,
-      "lastSuccess": 1707644642573
+      "total": 8,
+      "success": 8,
+      "last": 1713880491553,
+      "lastSuccess": 1713880491553
     },
     "ai-apk.js": {
       "total": 50,
@@ -72455,10 +72499,10 @@
       "lastSuccess": 1713875235466
     },
     "_config-sf-fils.js": {
-      "total": 62,
-      "success": 58,
-      "last": 1713877513320,
-      "lastSuccess": 1713877513320
+      "total": 63,
+      "success": 59,
+      "last": 1713880514996,
+      "lastSuccess": 1713880514996
     },
     "obb2.js": {
       "total": 5,
@@ -72473,10 +72517,10 @@
       "lastSuccess": 1712592643606
     },
     "removebg.js": {
-      "total": 3,
-      "success": 3,
-      "last": 1712593445555,
-      "lastSuccess": 1712593445555
+      "total": 9,
+      "success": 9,
+      "last": 1713880470287,
+      "lastSuccess": 1713880470287
     },
     "gemini2.js": {
       "total": 6,
