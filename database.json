@@ -71192,7 +71192,7 @@
       "regTime": -1,
       "registered": false,
       "role": "*NOVATO(A)* 🪤",
-      "exp": 186
+      "exp": 239
     }
   },
   "chats": {
@@ -72313,10 +72313,10 @@
       "lastSuccess": 1713390748512
     },
     "ai-sticker.js": {
-      "total": 8,
-      "success": 8,
-      "last": 1713880491553,
-      "lastSuccess": 1713880491553
+      "total": 10,
+      "success": 10,
+      "last": 1713904576915,
+      "lastSuccess": 1713904576915
     },
     "ai-apk.js": {
       "total": 52,
@@ -72517,10 +72517,10 @@
       "lastSuccess": 1712592643606
     },
     "removebg.js": {
-      "total": 9,
-      "success": 9,
-      "last": 1713880470287,
-      "lastSuccess": 1713880470287
+      "total": 10,
+      "success": 10,
+      "last": 1713904597255,
+      "lastSuccess": 1713904597255
     },
     "gemini2.js": {
       "total": 6,
