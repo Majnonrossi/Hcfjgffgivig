@@ -94,7 +94,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 18117,
+      "exp": 18544,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -72209,10 +72209,10 @@
   },
   "stats": {
     "tooll-help.js": {
-      "total": 31,
-      "success": 31,
-      "last": 1713873771042,
-      "lastSuccess": 1713873771042
+      "total": 32,
+      "success": 32,
+      "last": 1713877225931,
+      "lastSuccess": 1713877225931
     },
     "ai-bard2.js": {
       "total": 16,
@@ -72455,10 +72455,10 @@
       "lastSuccess": 1713875235466
     },
     "_config-sf-fils.js": {
-      "total": 57,
-      "success": 53,
-      "last": 1713876184658,
-      "lastSuccess": 1713876184658
+      "total": 62,
+      "success": 58,
+      "last": 1713877513320,
+      "lastSuccess": 1713877513320
     },
     "obb2.js": {
       "total": 5,
@@ -72647,10 +72647,10 @@
       "lastSuccess": 1713829090306
     },
     "abdo.js": {
-      "total": 15,
-      "success": 8,
-      "last": 1713876190598,
-      "lastSuccess": 1713876190598
+      "total": 18,
+      "success": 11,
+      "last": 1713876709564,
+      "lastSuccess": 1713876709564
     },
     "test7.js": {
       "total": 5,
@@ -72686,6 +72686,30 @@
       "total": 2,
       "success": 0,
       "last": 1713876117630,
+      "lastSuccess": 0
+    },
+    "manjo.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1713876762052,
+      "lastSuccess": 1713876762052
+    },
+    "tourl2.js": {
+      "total": 5,
+      "success": 3,
+      "last": 1713877232853,
+      "lastSuccess": 1713877232853
+    },
+    "hhhh.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1713876933986,
+      "lastSuccess": 1713876933986
+    },
+    "hhhhh.js": {
+      "total": 2,
+      "success": 0,
+      "last": 1713877518980,
       "lastSuccess": 0
     }
   },

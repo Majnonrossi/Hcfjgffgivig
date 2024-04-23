@@ -108,7 +108,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
   }
 }
 
-handler.command = ['testo'] 
+handler.command = ['manjo'] 
 handler.group = false
 handler.premium = true
 

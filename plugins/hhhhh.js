@@ -98,7 +98,41 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     const userProfile = await genProfile(conn, m)
 
     // Send the menu with user profile image
-    conn.sendMessage(m.chat, { image: userProfile, caption: text.trim() }, m)
+    const waImages = [
+      'https://telegra.ph/file/de92ed4a729887ffc974c.jpg',
+      'https://telegra.ph/file/00ce42a193b1dbbf907d4.jpg',
+      'https://telegra.ph/file/de92ed4a729887ffc974c.jpg',
+      'https://telegra.ph/file/00ce42a193b1dbbf907d4.jpg'
+    ]
+
+    const [firstRowImages, secondRowImages] = waImages.reduce((acc, curr, index) => {
+      index < 2 ? acc[0].push(curr) : acc[1].push(curr)
+      return acc
+    }, [[], []])
+
+    // Load and resize WhatsApp images
+    const waImagesPromises = [
+      ...firstRowImages.map(url => jimp.read(url)),
+      ...secondRowImages.map(url => jimp.read(url))
+    ]
+    const waImagesInstances = await Promise.all(waImagesPromises)
+    const resizedWaImages = waImagesInstances.map(image => image.resize(200, 200))
+
+    // Generate the background image
+    const bg = await jimp.read('https://a.uguu.se/cRSmrTkb.png')
+
+    // Composite WhatsApp images onto the background image
+    resizedWaImages.forEach((image, index) => {
+      const x = index < 2 ? index * 200 : (index - 2) * 200
+      const y = index < 2 ? 0 : 200
+      bg.composite(image, x, y)
+    })
+
+    // Composite user profile image onto the background image
+    bg.composite(userProfile, 10, 440)
+
+    // Send the final composite image
+    conn.sendFile(m.chat, await bg.getBufferAsync(jimp.MIME_PNG), 'menu.png', text.trim(), m)
 
     m.react('📚') 
     
@@ -108,7 +142,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
   }
 }
 
-handler.command = ['testo'] 
+handler.command = ['hhhhh'] 
 handler.group = false
 handler.premium = true
 
@@ -125,23 +159,20 @@ function clockString(ms) {
 }
 
 async function genProfile(conn, m) {
-  let font = await jimp.loadFont('./names.fnt'),
+  let font = await jimp.loadFont(jimp.FONT_SANS_32_WHITE),
     mask = await jimp.read('https://i.imgur.com/552kzaW.png'),
     avatar = await jimp.read(await conn.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')),
     status = (await conn.fetchStatus(m.sender).catch(console.log) || {}).status?.slice(0, 30) || 'Not Detected'
 
-  await avatar.resize(460, 460)
-  await mask.resize(460, 460)
+  await avatar.resize(150, 150) // Resize avatar
+  await mask.resize(150, 150)
   await avatar.mask(mask)
 
-  let userProfile = new jimp(1000, 800)
-  userProfile.composite(avatar, 20, 100)
-  userProfile.print(font, 550, 180, 'Name:')
-  userProfile.print(font, 650, 255, m.pushName.slice(0, 25))
-  userProfile.print(font, 550, 340, 'About:')
-  userProfile.print(font, 650, 415, status)
-  userProfile.print(font, 550, 500, 'Number:')
-  userProfile.print(font, 650, 575, PhoneNumber('+' + m.sender.split('@')[0]).getNumber('international'))
+  let userProfile = new jimp(300, 300)
+  userProfile.composite(avatar, 10, 10)
+  userProfile.print(font, 10, 170, 'Name: ' + m.pushName.slice(0, 20), 280) // Limit name to 20 characters
+  userProfile.print(font, 10, 210, 'About: ' + status, 280) // Limit status to 280 characters
+  userProfile.print(font, 10, 250, 'Number: ' + PhoneNumber('+' + m.sender.split('@')[0]).getNumber('international'), 280) // Limit number to 280 characters
 
   return userProfile.getBufferAsync(jimp.MIME_PNG)
 }

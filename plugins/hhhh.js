@@ -108,7 +108,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
   }
 }
 
-handler.command = ['testo'] 
+handler.command = ['hhhh'] 
 handler.group = false
 handler.premium = true
 
@@ -125,23 +125,20 @@ function clockString(ms) {
 }
 
 async function genProfile(conn, m) {
-  let font = await jimp.loadFont('./names.fnt'),
+  let font = await jimp.loadFont(jimp.FONT_SANS_32_WHITE),
     mask = await jimp.read('https://i.imgur.com/552kzaW.png'),
     avatar = await jimp.read(await conn.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')),
     status = (await conn.fetchStatus(m.sender).catch(console.log) || {}).status?.slice(0, 30) || 'Not Detected'
 
-  await avatar.resize(460, 460)
-  await mask.resize(460, 460)
+  await avatar.resize(150, 150) // Resize avatar
+  await mask.resize(150, 150)
   await avatar.mask(mask)
 
   let userProfile = new jimp(1000, 800)
   userProfile.composite(avatar, 20, 100)
-  userProfile.print(font, 550, 180, 'Name:')
-  userProfile.print(font, 650, 255, m.pushName.slice(0, 25))
-  userProfile.print(font, 550, 340, 'About:')
-  userProfile.print(font, 650, 415, status)
-  userProfile.print(font, 550, 500, 'Number:')
-  userProfile.print(font, 650, 575, PhoneNumber('+' + m.sender.split('@')[0]).getNumber('international'))
+  userProfile.print(font, 170, 40, 'Name: ' + m.pushName.slice(0, 20), 600) // Limit name to 20 characters
+  userProfile.print(font, 170, 90, 'About: ' + status, 600) // Limit status to 600 characters
+  userProfile.print(font, 170, 140, 'Number: ' + PhoneNumber('+' + m.sender.split('@')[0]).getNumber('international'), 600) // Limit number to 600 characters
 
   return userProfile.getBufferAsync(jimp.MIME_PNG)
 }
