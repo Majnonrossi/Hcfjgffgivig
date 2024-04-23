@@ -94,7 +94,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 19004,
+      "exp": 19254,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -3135,7 +3135,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 4215,
+      "exp": 4237,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -70847,7 +70847,7 @@
       "regTime": -1,
       "registered": false,
       "role": "*NOVATO(A)* 🪤",
-      "exp": 473
+      "exp": 696
     },
     "33757057291@s.whatsapp.net": {
       "afk": -1,
@@ -72253,10 +72253,10 @@
   },
   "stats": {
     "tooll-help.js": {
-      "total": 39,
-      "success": 39,
-      "last": 1713897281073,
-      "lastSuccess": 1713897281073
+      "total": 46,
+      "success": 46,
+      "last": 1713900510745,
+      "lastSuccess": 1713900510745
     },
     "ai-bard2.js": {
       "total": 16,
@@ -72319,10 +72319,10 @@
       "lastSuccess": 1713880491553
     },
     "ai-apk.js": {
-      "total": 50,
-      "success": 32,
-      "last": 1713832651970,
-      "lastSuccess": 1713832651970
+      "total": 52,
+      "success": 33,
+      "last": 1713900630791,
+      "lastSuccess": 1713900630791
     },
     "_config-banchat.js": {
       "total": 3,
@@ -72481,9 +72481,9 @@
       "lastSuccess": 1713828893664
     },
     "obb.js": {
-      "total": 9,
+      "total": 10,
       "success": 7,
-      "last": 1712745154014,
+      "last": 1713900585666,
       "lastSuccess": 1712745154014
     },
     "_config-welcome.js": {
@@ -72499,10 +72499,10 @@
       "lastSuccess": 1713882083190
     },
     "_config-sf-fils.js": {
-      "total": 67,
-      "success": 63,
-      "last": 1713882777778,
-      "lastSuccess": 1713882777778
+      "total": 73,
+      "success": 69,
+      "last": 1713900507115,
+      "lastSuccess": 1713900507115
     },
     "obb2.js": {
       "total": 5,
@@ -72529,10 +72529,10 @@
       "lastSuccess": 1712596641311
     },
     "owner-exec.js": {
-      "total": 27,
-      "success": 27,
-      "last": 1713876271469,
-      "lastSuccess": 1713876271469
+      "total": 30,
+      "success": 30,
+      "last": 1713899851424,
+      "lastSuccess": 1713899851424
     },
     "Adhan.js": {
       "total": 3,
@@ -72761,6 +72761,12 @@
       "success": 1,
       "last": 1713881786765,
       "lastSuccess": 1713881786765
+    },
+    "test.js": {
+      "total": 3,
+      "success": 3,
+      "last": 1713899786654,
+      "lastSuccess": 1713899786654
     }
   },
   "msgs": {},
