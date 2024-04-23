@@ -94,7 +94,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 21528,
+      "exp": 21596,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -71135,7 +71135,7 @@
       "regTime": -1,
       "registered": false,
       "role": "*NOVATO(A)* 🪤",
-      "exp": null
+      "exp": 7
     },
     "212773221071@s.whatsapp.net": {
       "afk": -1,
@@ -71193,6 +71193,25 @@
       "registered": false,
       "role": "*NOVATO(A)* 🪤",
       "exp": 239
+    },
+    "212690741502@s.whatsapp.net": {
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "banned": false,
+      "BannedReason": "",
+      "Banneduser": false,
+      "limit": 15,
+      "level": 0,
+      "money": 150,
+      "premium": false,
+      "premiumTime": 0,
+      "name": "+212 690-741502",
+      "GBLanguage": 0,
+      "regTime": -1,
+      "registered": false,
+      "role": "*NOVATO(A)* 🪤",
+      "exp": null
     }
   },
   "chats": {
@@ -72249,6 +72268,31 @@
       "antitoxic": true,
       "reaction": true,
       "expired": 0
+    },
+    "120363273632963041@g.us": {
+      "isBanned": false,
+      "welcome": true,
+      "detect": true,
+      "sWelcome": "",
+      "sBye": "",
+      "sPromote": "",
+      "sDemote": "",
+      "delete": true,
+      "antiver": true,
+      "modoadmin": false,
+      "antiLink": false,
+      "antiLink2": false,
+      "antiTiktok": false,
+      "antiYoutube": false,
+      "antiTelegram": false,
+      "antiFacebook": false,
+      "antiInstagram": false,
+      "antiTwitter": false,
+      "antifake": false,
+      "antiTraba": true,
+      "antitoxic": true,
+      "reaction": true,
+      "expired": 0
     }
   },
   "stats": {
@@ -72493,10 +72537,10 @@
       "lastSuccess": 1712443360341
     },
     "tooll-getplugin.js": {
-      "total": 11,
-      "success": 11,
-      "last": 1713882083190,
-      "lastSuccess": 1713882083190
+      "total": 14,
+      "success": 14,
+      "last": 1713912973810,
+      "lastSuccess": 1713912973810
     },
     "_config-sf-fils.js": {
       "total": 76,
