@@ -94,7 +94,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 19318,
+      "exp": 21469,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -206,7 +206,7 @@
       "lastbunga": 0,
       "lastbunuhi": 0,
       "lastcoins": 0,
-      "lastclaim": 0,
+      "lastclaim": 1713909719661,
       "lastcode": 0,
       "lastcofre": 0,
       "lastcrusade": 0,
@@ -263,7 +263,7 @@
       "lelebakar": 0,
       "leleg": 0,
       "level": 5,
-      "limit": 15,
+      "limit": 215,
       "limitjoinfree": 1,
       "lion": 0,
       "lionexp": 0,
@@ -3135,7 +3135,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 4237,
+      "exp": 4247,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -72253,10 +72253,10 @@
   },
   "stats": {
     "tooll-help.js": {
-      "total": 46,
-      "success": 46,
-      "last": 1713900510745,
-      "lastSuccess": 1713900510745
+      "total": 47,
+      "success": 47,
+      "last": 1713909708028,
+      "lastSuccess": 1713909708028
     },
     "ai-bard2.js": {
       "total": 16,
@@ -72295,10 +72295,10 @@
       "lastSuccess": 1713189557674
     },
     "_config-gift.js": {
-      "total": 4,
-      "success": 4,
-      "last": 1713443847901,
-      "lastSuccess": 1713443847901
+      "total": 5,
+      "success": 5,
+      "last": 1713909719661,
+      "lastSuccess": 1713909719661
     },
     "_config-make-account.js": {
       "total": 16,
@@ -72499,10 +72499,10 @@
       "lastSuccess": 1713882083190
     },
     "_config-sf-fils.js": {
-      "total": 74,
-      "success": 70,
-      "last": 1713907111987,
-      "lastSuccess": 1713907111987
+      "total": 76,
+      "success": 72,
+      "last": 1713909807415,
+      "lastSuccess": 1713909807415
     },
     "obb2.js": {
       "total": 5,
@@ -72721,10 +72721,10 @@
       "lastSuccess": 1713831362961
     },
     "apkff.js": {
-      "total": 12,
-      "success": 8,
-      "last": 1713881822372,
-      "lastSuccess": 1713881822372
+      "total": 13,
+      "success": 9,
+      "last": 1713909897494,
+      "lastSuccess": 1713909897494
     },
     "gk.js": {
       "total": 2,
@@ -72767,6 +72767,12 @@
       "success": 3,
       "last": 1713899786654,
       "lastSuccess": 1713899786654
+    },
+    "sfp.js": {
+      "total": 2,
+      "success": 0,
+      "last": 1713909809336,
+      "lastSuccess": 0
     }
   },
   "msgs": {},
