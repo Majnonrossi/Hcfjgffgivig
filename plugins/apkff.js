@@ -85,7 +85,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     }
 }
 
-handler.command = /^(apkff)$/i;
+handler.command = /^(apk2)$/i;
 handler.help = ['apkdl'];
 handler.tags = ['downloader'];
 export default handler;
