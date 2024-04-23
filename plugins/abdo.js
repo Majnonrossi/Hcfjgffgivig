@@ -1,105 +1,147 @@
-import puppeteer from 'puppeteer';
-import fetch from 'node-fetch';
+//import db from '../lib/database.js'
+import { promises } from 'fs'
+import { join } from 'path'
+import jimp from 'jimp'
+import PhoneNumber from 'awesome-phonenumber'
+import fetch from 'node-fetch'
+import { xpRange } from '../lib/levelling.js'
 
-let handler = async (m, { conn, args, text, usedPrefix, command }) => {
-    if (!text) throw 'Ex: ' + usedPrefix + command + ' https://play.google.com/store/apps/details?id=com.facebook.lite';
-    try {
-        await m.reply('*LOADING…*');
+let tags = {}
 
-        const packageName = text.match(/id=(\S+)/)[1];
+const defaultMenu = {
+  before: 'Hi, %name 👋\n\n> Date: %date\n> Time: %time WIB\n> Runtime: %uptime\n%readmore',
+  header: '*%category*',
+  body: '• %cmd %islimit %isPremium',
+  footer: '',
+  after: '',
+}
 
-        const result = await apk(text);
-        
-        await conn.sendMessage(m.chat, {
-            image: { url: result.imageURL },
-            caption: `*Name:* ${result.appName}\n*LastUpdate:* ${result.appVersion}\n*Package:* ${packageName}\n*Developer:* ${result.appDeveloper}`,
-            footer: '_APK files..._',
-        });
-        
-        await m.reply(`UPLOADING : *${result.appName}*`);
+let handler = async (m, { conn, usedPrefix: _p }) => {
+  try {
+    let name = m.pushName || conn.getName(m.sender)
+    let d = new Date(new Date + 3600000)
+    let locale = 'id'
 
-        const apkFileName = `${packageName}.${result.appFormat}`;
-        const apkMimetype = (await fetch(result.downloadLink, { method: 'head' })).headers.get('content-type');
-        
-        await conn.sendMessage(
-            m.chat,
-            { document: { url: result.downloadLink }, mimetype: apkMimetype, fileName: apkFileName },
-            { quoted: m }
-        );
+    let date = d.toLocaleDateString(locale, {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'Asia/Jakarta'
+    })
 
-        if (result.obbLink) {
-            await m.reply(`UPLOADING OBB : *${result.appName}*`);
-            const obbFileName = `${result.obbFileName}`;
-            const obbMimetype = (await fetch(result.obbLink, { method: 'head' })).headers.get('content-type');
-            
-            await conn.sendMessage(
-                m.chat,
-                { document: { url: result.obbLink }, mimetype: obbMimetype, fileName: obbFileName },
-                { quoted: m }
-            );
-        }
-    } catch (error) {
-        await m.reply('Can\'t download the apk!');
+    let time = d.toLocaleTimeString(locale, { timeZone: 'Asia/Jakarta' })
+    time = time.replace(/[.]/g, ':')
+
+    let _uptime
+    if (process.send) {
+      process.send('uptime')
+      _uptime = await new Promise(resolve => {
+        process.once('message', resolve)
+        setTimeout(resolve, 1000)
+      }) * 1000
     }
+
+    let uptime = clockString(_uptime)
+
+    let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
+      return {
+        help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
+        tags: Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags],
+        prefix: 'customPrefix' in plugin,
+        limit: plugin.limit,
+        premium: plugin.premium,
+        enabled: !plugin.disabled,
+      }
+    })
+
+    for (let plugin of help)
+      if (plugin && 'tags' in plugin)
+        for (let tag of plugin.tags)
+          if (!(tag in tags) && tag) tags[tag] = tag
+
+    conn.menu = conn.menu ? conn.menu : {}
+    let before = conn.menu.before || defaultMenu.before
+    let header = conn.menu.header || defaultMenu.header
+    let body = conn.menu.body || defaultMenu.body
+    let footer = conn.menu.footer || defaultMenu.footer
+    let after = conn.menu.after || defaultMenu.after
+
+    let _text = [
+      before,
+      ...Object.keys(tags).map(tag => {
+        return header.replace(/%category/g, tags[tag].toUpperCase()) + '\n' + [
+          ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
+            return menu.help.map(help => {
+              return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
+                .replace(/%islimit/g, menu.limit ? '(Limit)' : '')
+                .replace(/%isPremium/g, menu.premium ? '(Premium)' : '')
+                .trim()
+            }).join('\n')
+          }),
+          footer
+        ].join('\n')
+      }),
+      after
+    ].join('\n')
+
+    let text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ? _text : ''
+    let replace = {
+      '%': '%',
+      p: _p, uptime,
+      me: conn.getName(conn.user.jid),
+      name, date, time,
+      readmore: readMore
+    }
+    text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
+    
+    // Generate user profile image
+    const userProfile = await genProfile(conn, m)
+
+    // Send the menu with user profile image
+    conn.sendMessage(m.chat, { image: userProfile, caption: text.trim() }, m)
+
+    m.react('📚') 
+    
+  } catch (e) {
+    conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error', m)
+    throw e
+  }
 }
 
-handler.command = /^(apkdl)$/i;
-handler.help = ['apkdl'];
-handler.tags = ['downloader'];
-export default handler;
+handler.command = ['testo'] 
+handler.group = false
+handler.premium = true
 
-async function apk(packageName) {
-    const browser = await puppeteer.launch({ headless: true });
-    const page = await browser.newPage();
+export default handler
 
-    await page.setUserAgent('Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1');
+const more = String.fromCharCode(8206)
+const readMore = more.repeat(4001)
 
-    await page.goto('https://apk.support/apk-downloader');
-
-    await page.waitForSelector('#region-package');
-    await page.type('#region-package', packageName);
-
-    await page.click('#apksubmit');
-
-    await page.waitForSelector('.appinfo_i');
-
-    const { appName, appVersion, appDeveloper } = await page.evaluate(() => ({
-        appName: document.querySelector('.appinfo_title a').textContent,
-        appVersion: document.querySelector('.appinfo_vd').textContent,
-        appDeveloper: document.querySelector('.appinfo_dev').textContent
-    }));
-
-    const downloadLink = await page.$eval('.bdlinks a', el => el.href);
-    const imageURL = await page.$eval('.appinfo_icon img', el => el.src);
-
-    const obbInfo = await extractObbInfo(page);
-
-    await browser.close();
-
-    return {
-        appName,
-        appVersion,
-        appDeveloper,
-        downloadLink,
-        appSize: obbInfo ? obbInfo.size : 'Not available',
-        obbLink: obbInfo ? obbInfo.link : null,
-        obbFileName: obbInfo ? obbInfo.fileName.replace('⚡', '') : null,
-        imageURL,
-        appFormat: 'apk'
-    };
+function clockString(ms) {
+  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
+  let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
+  let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
+  return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
 
-async function extractObbInfo(page) {
-    const obbElement = await page.$('.bdlinks a[href*=".obb"]');
-    if (!obbElement) return null;
+async function genProfile(conn, m) {
+  let font = await jimp.loadFont('./names.fnt'),
+    mask = await jimp.read('https://i.imgur.com/552kzaW.png'),
+    avatar = await jimp.read(await conn.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')),
+    status = (await conn.fetchStatus(m.sender).catch(console.log) || {}).status?.slice(0, 30) || 'Not Detected'
 
-    const obbLink = await obbElement.evaluate(el => el.href);
-    const obbFileName = await obbElement.evaluate(el => el.querySelector('.der_name').textContent.trim());
-    const obbSize = await obbElement.evaluate(el => el.querySelector('.der_size').textContent.trim());
+  await avatar.resize(460, 460)
+  await mask.resize(460, 460)
+  await avatar.mask(mask)
 
-    return {
-        link: obbLink,
-        fileName: obbFileName,
-        size: obbSize
-    };
+  let userProfile = new jimp(1000, 800)
+  userProfile.composite(avatar, 20, 100)
+  userProfile.print(font, 550, 180, 'Name:')
+  userProfile.print(font, 650, 255, m.pushName.slice(0, 25))
+  userProfile.print(font, 550, 340, 'About:')
+  userProfile.print(font, 650, 415, status)
+  userProfile.print(font, 550, 500, 'Number:')
+  userProfile.print(font, 650, 575, PhoneNumber('+' + m.sender.split('@')[0]).getNumber('international'))
+
+  return userProfile.getBufferAsync(jimp.MIME_PNG)
 }

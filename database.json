@@ -94,7 +94,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 17954,
+      "exp": 18117,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -3135,7 +3135,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 4071,
+      "exp": 4081,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -7426,7 +7426,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 135,
+      "exp": 141,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -7771,7 +7771,8 @@
       "psenjata": 0,
       "psepick": 0,
       "robo": 0,
-      "roboxp": 0
+      "roboxp": 0,
+      "age": 0
     },
     "212619754890@s.whatsapp.net": {
       "counterPrivate": 0,
@@ -70846,7 +70847,7 @@
       "regTime": -1,
       "registered": false,
       "role": "*NOVATO(A)* 🪤",
-      "exp": 389
+      "exp": 442
     },
     "33757057291@s.whatsapp.net": {
       "afk": -1,
@@ -72208,10 +72209,10 @@
   },
   "stats": {
     "tooll-help.js": {
-      "total": 30,
-      "success": 30,
-      "last": 1713693059172,
-      "lastSuccess": 1713693059172
+      "total": 31,
+      "success": 31,
+      "last": 1713873771042,
+      "lastSuccess": 1713873771042
     },
     "ai-bard2.js": {
       "total": 16,
@@ -72448,16 +72449,16 @@
       "lastSuccess": 1712443360341
     },
     "tooll-getplugin.js": {
-      "total": 9,
-      "success": 9,
-      "last": 1713566298645,
-      "lastSuccess": 1713566298645
+      "total": 10,
+      "success": 10,
+      "last": 1713875235466,
+      "lastSuccess": 1713875235466
     },
     "_config-sf-fils.js": {
-      "total": 56,
-      "success": 52,
-      "last": 1713831956512,
-      "lastSuccess": 1713831956512
+      "total": 57,
+      "success": 53,
+      "last": 1713876184658,
+      "lastSuccess": 1713876184658
     },
     "obb2.js": {
       "total": 5,
@@ -72484,10 +72485,10 @@
       "lastSuccess": 1712596641311
     },
     "owner-exec.js": {
-      "total": 24,
-      "success": 24,
-      "last": 1713831757744,
-      "lastSuccess": 1713831757744
+      "total": 27,
+      "success": 27,
+      "last": 1713876271469,
+      "lastSuccess": 1713876271469
     },
     "Adhan.js": {
       "total": 3,
@@ -72646,10 +72647,10 @@
       "lastSuccess": 1713829090306
     },
     "abdo.js": {
-      "total": 14,
-      "success": 7,
-      "last": 1713831674080,
-      "lastSuccess": 1713831674080
+      "total": 15,
+      "success": 8,
+      "last": 1713876190598,
+      "lastSuccess": 1713876190598
     },
     "test7.js": {
       "total": 5,
@@ -72676,10 +72677,16 @@
       "lastSuccess": 1713831362961
     },
     "apkff.js": {
-      "total": 10,
-      "success": 6,
-      "last": 1713854257713,
-      "lastSuccess": 1713854257713
+      "total": 11,
+      "success": 7,
+      "last": 1713876262199,
+      "lastSuccess": 1713876262199
+    },
+    "gk.js": {
+      "total": 2,
+      "success": 0,
+      "last": 1713876117630,
+      "lastSuccess": 0
     }
   },
   "msgs": {},
