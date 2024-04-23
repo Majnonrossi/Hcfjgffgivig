@@ -22,85 +22,9 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     const readMore = more.repeat(850);
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
     const doc = ['pdf', 'zip', 'vnd.openxmlformats-officedocument.presentationml.presentation', 'vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'vnd.openxmlformats-officedocument.wordprocessingml.document'];
-    m.react('📚');
+    m.react('✅');
     const document = doc[Math.floor(Math.random() * doc.length)];
-    const str = `
- ▢ *hello,* ${taguser}
-
- _*< Your Accounte />*_
-
- ▢ *Level :* ${level}
- ▢ *Exp :* ${exp}
- ▢ *Diamantes :* ${limit}
- ▢ *Premium :* ${user.premiumTime > 0 ? '✅' : (isPrems ? '✅' : '❌')}
- ▢ *Registrado :* ${user.registered === true ? '✅' : '❌'}
-_*< Owner Bot  Majnon />*_
-
- https://instagram.com/majnon._.98\n%readmore
-
-_*< Bot Commnds />*_
-
-▢ _/jadibot_
-▢ _/listjadibot_
-▢ _/deletesesion_
-▢ _/runtime_
-▢ _/ping_
-
-_*< Premium Commnds />*_
-
-▢ _/apk_
-▢ _/obb_
-▢ _/imganime2_
-▢ _/imagine2_
-▢ _/fb_
-▢ _/2ytmp4_
-▢ _/2ytmp4_
-
-_*< downloade Commnds />*_
-
-▢ _/play_
-▢ _/ytmp3_
-▢ _/ytmp4_
-▢ _/yts_
-▢ _/ig_
-▢ _/img_
-▢ _/tiktok_
-
-_*< Ai Commnds />*_
-
-▢ _/imagine_
-▢ _/imganime_
-▢ _/hdr_
-▢ _/bard_
-▢ _/bard2 (beta)_
-▢ _/bardimg_
-▢ _/ai_
-▢ _/chatgpt_
-▢ _/hdr_
-▢ _/ocr_
-▢ _/tr <code>_
-▢ _/cuturl_
-
-_*< Islamic Commnds />*_
-
-▢ _/ayati_
-▢ _/adhan_
-
-_*< Accounte Commnds />*_
-
-▢ _/make-account_
-▢ _/serie_
-▢ _/del-account_
-▢ _/transfer_
-▢ _/info_
-▢ _/buy_
-▢ _/levelup_
-▢ _/gift_
-
-_*< Other Commnds />*_
-
-▢ _/infobot_
-▢ _/math_`.trim();
+    const str = `\n ▢ *hello,* ${taguser}\n\n_*< Your Accounte />*_\n\n ▢ *Level :* ${level}\n ▢ *Exp :* ${exp}\n ▢ *Diamantes :* ${limit}\n ▢ *Premium :* ${user.premiumTime > 0 ? '✅' : (isPrems ? '✅' : '❌')}\n ▢ *Registrado :* ${user.registered === true ? '✅' : '❌'}\n\n_*< Owner Bot  Majnon />*_\n\n https://instagram.com/majnon._.98\n%readmore\n\n_*< Bot Commnds />*_\n\n▢ _/jadibot_\n▢ _/listjadibot_\n▢ _/deletesesion_\n▢ _/runtime_\n▢ _/ping_\n\n_*< Premium Commnds />*_\n\n▢ _/apk_\n▢ _/obb_\n▢ _/imganime2_\n▢ _/imagine2_\n▢ _/fb_\n▢ _/2ytmp4_\n▢ _/2ytmp4_\n\n_*< downloade Commnds />*_\n\n▢ _/play_\n▢ _/ytmp3_\n▢ _/ytmp4_\n▢ _/yts_\n▢ _/ig_\n▢ _/img_\n▢ _/tiktok_\n\n_*< Ai Commnds />*_\n\n▢ _/imagine_\n▢ _/imganime_\n▢ _/hdr_\n▢ _/bard_\n▢ _/bard2 (beta)_\n▢ _/bardimg_\n▢ _/ai_\n▢ _/chatgpt_\n▢ _/hdr_\n▢ _/ocr_\n▢ _/tr <code>_\n▢ _/cuturl_\n\n_*< Islamic Commnds />*_\n\n▢ _/ayati_\n▢ _/adhan_\n\n_*< Accounte Commnds />*_\n\n▢ _/make-account_\n▢ _/serie_\n▢ _/del-account_\n▢ _/transfer_\n▢ _/info_\n▢ _/buy_\n▢ _/levelup_\n▢ _/gift_\n\n_*< Other Commnds />*_\n\n▢ _/infobot_\n▢ _/math_`.trim();
     if (m.isGroup) {
       // await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
       const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
