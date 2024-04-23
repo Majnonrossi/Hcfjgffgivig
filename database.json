@@ -94,7 +94,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 18701,
+      "exp": 18888,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -3135,7 +3135,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 4081,
+      "exp": 4100,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -70847,7 +70847,7 @@
       "regTime": -1,
       "registered": false,
       "role": "*NOVATO(A)* 🪤",
-      "exp": 442
+      "exp": 473
     },
     "33757057291@s.whatsapp.net": {
       "afk": -1,
@@ -72253,10 +72253,10 @@
   },
   "stats": {
     "tooll-help.js": {
-      "total": 32,
-      "success": 32,
-      "last": 1713877225931,
-      "lastSuccess": 1713877225931
+      "total": 35,
+      "success": 35,
+      "last": 1713882308801,
+      "lastSuccess": 1713882308801
     },
     "ai-bard2.js": {
       "total": 16,
@@ -72493,16 +72493,16 @@
       "lastSuccess": 1712443360341
     },
     "tooll-getplugin.js": {
-      "total": 10,
-      "success": 10,
-      "last": 1713875235466,
-      "lastSuccess": 1713875235466
+      "total": 11,
+      "success": 11,
+      "last": 1713882083190,
+      "lastSuccess": 1713882083190
     },
     "_config-sf-fils.js": {
-      "total": 63,
-      "success": 59,
-      "last": 1713880514996,
-      "lastSuccess": 1713880514996
+      "total": 65,
+      "success": 61,
+      "last": 1713882285485,
+      "lastSuccess": 1713882285485
     },
     "obb2.js": {
       "total": 5,
@@ -72721,10 +72721,10 @@
       "lastSuccess": 1713831362961
     },
     "apkff.js": {
-      "total": 11,
-      "success": 7,
-      "last": 1713876262199,
-      "lastSuccess": 1713876262199
+      "total": 12,
+      "success": 8,
+      "last": 1713881822372,
+      "lastSuccess": 1713881822372
     },
     "gk.js": {
       "total": 2,
@@ -72755,6 +72755,12 @@
       "success": 0,
       "last": 1713877518980,
       "lastSuccess": 0
+    },
+    "apkdl.js": {
+      "total": 3,
+      "success": 1,
+      "last": 1713881786765,
+      "lastSuccess": 1713881786765
     }
   },
   "msgs": {},

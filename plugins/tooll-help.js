@@ -36,7 +36,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
  ▢ *Registrado :* ${user.registered === true ? '✅' : '❌'}
 _*< Owner Bot  Majnon />*_
 
- https://instagram.com/majnon._.98
+ https://instagram.com/majnon._.98\n%readmore
 
 _*< Bot Commnds />*_
 
