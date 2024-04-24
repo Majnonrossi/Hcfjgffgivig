@@ -94,7 +94,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 22511,
+      "exp": 22596,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -3135,7 +3135,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 4259,
+      "exp": 4266,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -70503,7 +70503,7 @@
       "regTime": 1712596602413,
       "registered": true,
       "role": "*NOVATO(A)* 🪤",
-      "exp": 2128,
+      "exp": 2137,
       "gender": "🙆🏻‍♂️ Male",
       "country": "m"
     },
@@ -72401,10 +72401,10 @@
       "lastSuccess": 1713904576915
     },
     "ai-apk.js": {
-      "total": 52,
-      "success": 33,
-      "last": 1713900630791,
-      "lastSuccess": 1713900630791
+      "total": 53,
+      "success": 34,
+      "last": 1713956643088,
+      "lastSuccess": 1713956643088
     },
     "_config-banchat.js": {
       "total": 3,
@@ -72851,10 +72851,10 @@
       "lastSuccess": 1713915408993
     },
     "sfp.js": {
-      "total": 12,
-      "success": 9,
-      "last": 1713944427867,
-      "lastSuccess": 1713944427867
+      "total": 13,
+      "success": 10,
+      "last": 1713957977962,
+      "lastSuccess": 1713957977962
     },
     "artdraw.js.js": {
       "total": 5,
@@ -72863,9 +72863,9 @@
       "lastSuccess": 1713940602141
     },
     "apkgl.js.js": {
-      "total": 6,
+      "total": 7,
       "success": 4,
-      "last": 1713914622823,
+      "last": 1713957897193,
       "lastSuccess": 1713914622823
     }
   },
