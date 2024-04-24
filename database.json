@@ -3135,7 +3135,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 4503,
+      "exp": 4529,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -70847,7 +70847,7 @@
       "regTime": -1,
       "registered": false,
       "role": "*NOVATO(A)* 🪤",
-      "exp": 800
+      "exp": 931
     },
     "33757057291@s.whatsapp.net": {
       "afk": -1,
@@ -72682,10 +72682,10 @@
       "lastSuccess": 1713912973810
     },
     "_config-sf-fils.js": {
-      "total": 80,
-      "success": 74,
-      "last": 1713990272244,
-      "lastSuccess": 1713940842769
+      "total": 82,
+      "success": 75,
+      "last": 1713997200801,
+      "lastSuccess": 1713997200801
     },
     "obb2.js": {
       "total": 5,
@@ -72712,10 +72712,10 @@
       "lastSuccess": 1712596641311
     },
     "owner-exec.js": {
-      "total": 32,
-      "success": 32,
-      "last": 1713915420534,
-      "lastSuccess": 1713915420534
+      "total": 33,
+      "success": 33,
+      "last": 1713997218110,
+      "lastSuccess": 1713997218110
     },
     "Adhan.js": {
       "total": 3,
@@ -72968,6 +72968,12 @@
       "success": 4,
       "last": 1713957897193,
       "lastSuccess": 1713914622823
+    },
+    "delet.js": {
+      "total": 3,
+      "success": 3,
+      "last": 1713997206722,
+      "lastSuccess": 1713997206722
     }
   },
   "msgs": {},
