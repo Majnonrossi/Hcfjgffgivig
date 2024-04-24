@@ -94,7 +94,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 21873,
+      "exp": 22313,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -70503,7 +70503,7 @@
       "regTime": 1712596602413,
       "registered": true,
       "role": "*NOVATO(A)* 🪤",
-      "exp": 2111,
+      "exp": 2128,
       "gender": "🙆🏻‍♂️ Male",
       "country": "m"
     },
@@ -72581,10 +72581,10 @@
       "lastSuccess": 1713912973810
     },
     "_config-sf-fils.js": {
-      "total": 77,
-      "success": 73,
-      "last": 1713915399848,
-      "lastSuccess": 1713915399848
+      "total": 78,
+      "success": 74,
+      "last": 1713940842769,
+      "lastSuccess": 1713940842769
     },
     "obb2.js": {
       "total": 5,
@@ -72755,10 +72755,10 @@
       "lastSuccess": 1713699181827
     },
     "apksearch.js": {
-      "total": 6,
-      "success": 4,
-      "last": 1713831684744,
-      "lastSuccess": 1713831684744
+      "total": 7,
+      "success": 5,
+      "last": 1713941698422,
+      "lastSuccess": 1713941698422
     },
     "appdl.js": {
       "total": 6,
@@ -72797,10 +72797,10 @@
       "lastSuccess": 0
     },
     "apkgl.js": {
-      "total": 3,
-      "success": 1,
-      "last": 1713831362961,
-      "lastSuccess": 1713831362961
+      "total": 16,
+      "success": 10,
+      "last": 1713941993073,
+      "lastSuccess": 1713941993073
     },
     "apkff.js": {
       "total": 17,
@@ -72839,9 +72839,9 @@
       "lastSuccess": 0
     },
     "apkdl.js": {
-      "total": 4,
+      "total": 5,
       "success": 1,
-      "last": 1713914384952,
+      "last": 1713941179800,
       "lastSuccess": 1713881786765
     },
     "test.js": {
@@ -72851,10 +72851,10 @@
       "lastSuccess": 1713915408993
     },
     "sfp.js": {
-      "total": 5,
-      "success": 3,
-      "last": 1713914584650,
-      "lastSuccess": 1713914584650
+      "total": 9,
+      "success": 6,
+      "last": 1713941648420,
+      "lastSuccess": 1713941648420
     },
     "artdraw.js.js": {
       "total": 5,
