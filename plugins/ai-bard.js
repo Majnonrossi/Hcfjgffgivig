@@ -17,7 +17,7 @@ var handler = async (m, { text, usedPrefix, command }) => {
 handler.command = ['bard'];
 handler.help = ['bard'];
 handler.tags = ['herramientas'];
-handler.register = true;
+handler.register = false;
 handler.premium = false;
 
 export default handler;
