@@ -94,7 +94,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 22446,
+      "exp": 22470,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -7426,7 +7426,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 141,
+      "exp": 177,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -72797,10 +72797,10 @@
       "lastSuccess": 0
     },
     "apkgl.js": {
-      "total": 19,
-      "success": 11,
-      "last": 1713942964289,
-      "lastSuccess": 1713942719739
+      "total": 21,
+      "success": 13,
+      "last": 1713944295411,
+      "lastSuccess": 1713944295411
     },
     "apkff.js": {
       "total": 17,
@@ -72851,10 +72851,10 @@
       "lastSuccess": 1713915408993
     },
     "sfp.js": {
-      "total": 11,
-      "success": 8,
-      "last": 1713942960668,
-      "lastSuccess": 1713942960668
+      "total": 12,
+      "success": 9,
+      "last": 1713944427867,
+      "lastSuccess": 1713944427867
     },
     "artdraw.js.js": {
       "total": 5,

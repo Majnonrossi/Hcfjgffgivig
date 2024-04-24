@@ -6,7 +6,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     if (!text) throw 'Please provide a valid Google Play Store link or an app name to install.';
 
     try {
-        await m.reply('*LOADING…*\nFollow us on Instagram:https://www.instagram.com/majnon._.98)');
+        await m.reply('*LOADING…*\nFollow us on Instagram:https://www.instagram.com/majnon._.98 ');
 
         // If the input is a Google Play Store link
         if (text.includes('play.google.com')) {
