@@ -3,9 +3,10 @@ import puppeteer from 'puppeteer';
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
-    if (!text) throw 'الرجاء تقديم رابط صالح من متجر جوجل بلاي أو اسم تطبيق للبحث عنه.';
+    if (!text) throw 'Please provide a valid Google Play Store link or an app name to install.';
+
     try {
-        await m.reply('*جاري التحميل...*');
+        await m.reply('*LOADING…*\nFollow us on Instagram:https://www.instagram.com/majnon._.98)');
 
         // If the input is a Google Play Store link
         if (text.includes('play.google.com')) {
@@ -14,35 +15,35 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
             await conn.sendMessage(m.chat, {
                 image: { url: result.imageURL },
-                caption: `*الاسم:* ${result.appName}\n*أحدث تحديث:* ${result.appVersion}\n*الحزمة:* ${packageName}\n*المطور:* ${result.appDeveloper}`,
-                footer: '_ملفات APK..._',
+                caption: `*Name:* ${result.appName}\n*Last Update:* ${result.appVersion}\n*Package:* ${packageName}\n*Developer:* ${result.appDeveloper}`,
+                footer: '_APK files..._',
             });
-            
-            await m.reply(`جاري التحميل: *${result.appName}*`);
+
+            await m.reply(`UPLOADING: *${result.appName}*`);
 
             const apkFileName = `${packageName}.${result.appFormat}`;
             const apkMimetype = (await fetch(result.downloadLink, { method: 'head' })).headers.get('content-type');
-            
+
             await conn.sendFile(
                 m.chat,
                 result.downloadLink,
                 apkFileName,
-                `تم تنزيل ملف APK للتطبيق: ${result.appName}`,
+                `APK file for ${result.appName}`,
                 m,
                 false,
                 { mimetype: apkMimetype }
             );
 
             if (result.obbLink) {
-                await m.reply(`جاري تحميل ملف OBB: *${result.appName}*`);
+                await m.reply(`UPLOADING OBB: *${result.appName}*`);
                 const obbFileName = `${result.obbFileName}`;
                 const obbMimetype = (await fetch(result.obbLink, { method: 'head' })).headers.get('content-type');
-                
+
                 await conn.sendFile(
                     m.chat,
                     result.obbLink,
                     obbFileName,
-                    `تم تنزيل ملف OBB للتطبيق: ${result.appName}`,
+                    `OBB file for ${result.appName}`,
                     m,
                     false,
                     { mimetype: obbMimetype }
@@ -51,7 +52,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
         } else {
             // If the input is an app name to search for
             let res = await gplay.search({ term: text });
-            if (!res.length) throw `الاستعلام "${text}" غير موجود :/`;
+            if (!res.length) throw `Query "${text}" not found :/`;
 
             // Choose the first result
             const firstResult = res[0];
@@ -61,35 +62,35 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
             await conn.sendMessage(m.chat, {
                 image: { url: result.imageURL },
-                caption: `*الاسم:* ${result.appName}\n*أحدث تحديث:* ${result.appVersion}\n*الحزمة:* ${packageName}\n*المطور:* ${result.appDeveloper}`,
-                footer: '_ملفات APK..._',
+                caption: `*Name:* ${result.appName}\n*Last Update:* ${result.appVersion}\n*Package:* ${packageName}\n*Developer:* ${result.appDeveloper}`,
+                footer: '_APK files..._',
             });
-            
-            await m.reply(`جاري التحميل: *${result.appName}*`);
+
+            await m.reply(`UPLOADING: *${result.appName}*`);
 
             const apkFileName = `${packageName}.${result.appFormat}`;
             const apkMimetype = (await fetch(result.downloadLink, { method: 'head' })).headers.get('content-type');
-            
+
             await conn.sendFile(
                 m.chat,
                 result.downloadLink,
                 apkFileName,
-                `تم تنزيل ملف APK للتطبيق: ${result.appName}`,
+                `APK file for ${result.appName}`,
                 m,
                 false,
                 { mimetype: apkMimetype }
             );
 
             if (result.obbLink) {
-                await m.reply(`جاري تحميل ملف OBB: *${result.appName}*`);
+                await m.reply(`UPLOADING OBB: *${result.appName}*`);
                 const obbFileName = `${result.obbFileName}`;
                 const obbMimetype = (await fetch(result.obbLink, { method: 'head' })).headers.get('content-type');
-                
+
                 await conn.sendFile(
                     m.chat,
                     result.obbLink,
                     obbFileName,
-                    `تم تنزيل ملف OBB للتطبيق: ${result.appName}`,
+                    `OBB file for ${result.appName}`,
                     m,
                     false,
                     { mimetype: obbMimetype }
@@ -97,7 +98,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
             }
         }
     } catch (error) {
-        await m.reply('لا يمكن تنزيل ملف التطبيق!');
+        await m.reply('Can\'t download the apk!');
     }
 }
 
@@ -139,7 +140,7 @@ async function apk(packageName) {
         appVersion,
         appDeveloper,
         downloadLink,
-        appSize: obbInfo ? obbInfo.size : 'غير متوفر',
+        appSize: obbInfo ? obbInfo.size : 'Not available',
         obbLink: obbInfo ? obbInfo.link : null,
         obbFileName: obbInfo ? obbInfo.fileName.replace('⚡', '') : null,
         imageURL,
