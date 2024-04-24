@@ -94,7 +94,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 22596,
+      "exp": 22824,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -72341,10 +72341,10 @@
       "lastSuccess": 1713909708028
     },
     "ai-bard2.js": {
-      "total": 16,
-      "success": 16,
-      "last": 1713477646608,
-      "lastSuccess": 1713477646608
+      "total": 17,
+      "success": 17,
+      "last": 1713960058583,
+      "lastSuccess": 1713960058583
     },
     "ai-bardimg.js": {
       "total": 9,
@@ -72461,10 +72461,10 @@
       "lastSuccess": 1707607077690
     },
     "ai-tr.js": {
-      "total": 12,
-      "success": 12,
-      "last": 1707668162566,
-      "lastSuccess": 1707668162566
+      "total": 15,
+      "success": 15,
+      "last": 1713960426000,
+      "lastSuccess": 1713960426000
     },
     "_config-addprem.js": {
       "total": 8,
@@ -72545,10 +72545,10 @@
       "lastSuccess": 0
     },
     "ai-bard.js": {
-      "total": 8,
-      "success": 5,
-      "last": 1713208278160,
-      "lastSuccess": 1713208278160
+      "total": 9,
+      "success": 6,
+      "last": 1713960039694,
+      "lastSuccess": 1713960039694
     },
     "_config-on y off.js": {
       "total": 2,
@@ -72581,9 +72581,9 @@
       "lastSuccess": 1713912973810
     },
     "_config-sf-fils.js": {
-      "total": 78,
+      "total": 79,
       "success": 74,
-      "last": 1713940842769,
+      "last": 1713958971066,
       "lastSuccess": 1713940842769
     },
     "obb2.js": {
@@ -72851,10 +72851,10 @@
       "lastSuccess": 1713915408993
     },
     "sfp.js": {
-      "total": 13,
-      "success": 10,
-      "last": 1713957977962,
-      "lastSuccess": 1713957977962
+      "total": 15,
+      "success": 12,
+      "last": 1713958953692,
+      "lastSuccess": 1713958953692
     },
     "artdraw.js.js": {
       "total": 5,
