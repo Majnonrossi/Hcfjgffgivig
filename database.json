@@ -94,7 +94,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 22922,
+      "exp": 22989,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -3135,7 +3135,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 4290,
+      "exp": 4435,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -72403,10 +72403,10 @@
       "lastSuccess": 1707605428464
     },
     "_config-info.js": {
-      "total": 12,
-      "success": 12,
-      "last": 1713443855967,
-      "lastSuccess": 1713443855967
+      "total": 13,
+      "success": 13,
+      "last": 1713976124069,
+      "lastSuccess": 1713976124069
     },
     "_config-top-members.js": {
       "total": 4,
@@ -72499,10 +72499,10 @@
       "lastSuccess": 1707607077690
     },
     "ai-tr.js": {
-      "total": 15,
-      "success": 15,
-      "last": 1713960426000,
-      "lastSuccess": 1713960426000
+      "total": 16,
+      "success": 16,
+      "last": 1713975793186,
+      "lastSuccess": 1713975793186
     },
     "_config-addprem.js": {
       "total": 8,
@@ -72583,10 +72583,10 @@
       "lastSuccess": 0
     },
     "ai-bard.js": {
-      "total": 9,
-      "success": 6,
-      "last": 1713960039694,
-      "lastSuccess": 1713960039694
+      "total": 11,
+      "success": 7,
+      "last": 1713975425383,
+      "lastSuccess": 1713975425383
     },
     "_config-on y off.js": {
       "total": 2,
