@@ -94,7 +94,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 22989,
+      "exp": 23071,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -70847,7 +70847,7 @@
       "regTime": -1,
       "registered": false,
       "role": "*NOVATO(A)* 🪤",
-      "exp": 793
+      "exp": 800
     },
     "33757057291@s.whatsapp.net": {
       "afk": -1,
@@ -72436,10 +72436,10 @@
   },
   "stats": {
     "tooll-help.js": {
-      "total": 47,
-      "success": 47,
-      "last": 1713909708028,
-      "lastSuccess": 1713909708028
+      "total": 48,
+      "success": 48,
+      "last": 1713989811387,
+      "lastSuccess": 1713989811387
     },
     "ai-bard2.js": {
       "total": 17,
@@ -72682,9 +72682,9 @@
       "lastSuccess": 1713912973810
     },
     "_config-sf-fils.js": {
-      "total": 79,
+      "total": 80,
       "success": 74,
-      "last": 1713958971066,
+      "last": 1713990272244,
       "lastSuccess": 1713940842769
     },
     "obb2.js": {
@@ -72952,10 +72952,10 @@
       "lastSuccess": 1713915408993
     },
     "sfp.js": {
-      "total": 15,
-      "success": 12,
-      "last": 1713958953692,
-      "lastSuccess": 1713958953692
+      "total": 16,
+      "success": 13,
+      "last": 1713990234221,
+      "lastSuccess": 1713990234221
     },
     "artdraw.js.js": {
       "total": 9,
