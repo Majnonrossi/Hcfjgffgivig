@@ -70847,7 +70847,7 @@
       "regTime": -1,
       "registered": false,
       "role": "*NOVATO(A)* 🪤",
-      "exp": 696
+      "exp": 788
     },
     "33757057291@s.whatsapp.net": {
       "afk": -1,
@@ -71207,6 +71207,44 @@
       "premium": false,
       "premiumTime": 0,
       "name": "+212 690-741502",
+      "GBLanguage": 0,
+      "regTime": -1,
+      "registered": false,
+      "role": "*NOVATO(A)* 🪤",
+      "exp": null
+    },
+    "4591771959@s.whatsapp.net": {
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "banned": false,
+      "BannedReason": "",
+      "Banneduser": false,
+      "limit": 15,
+      "level": 0,
+      "money": 150,
+      "premium": false,
+      "premiumTime": 0,
+      "name": "VIP",
+      "GBLanguage": 0,
+      "regTime": -1,
+      "registered": false,
+      "role": "*NOVATO(A)* 🪤",
+      "exp": null
+    },
+    "212617820675@s.whatsapp.net": {
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "banned": false,
+      "BannedReason": "",
+      "Banneduser": false,
+      "limit": 15,
+      "level": 0,
+      "money": 150,
+      "premium": false,
+      "premiumTime": 0,
+      "name": "+212 617-820675",
       "GBLanguage": 0,
       "regTime": -1,
       "registered": false,
@@ -72543,10 +72581,10 @@
       "lastSuccess": 1713912973810
     },
     "_config-sf-fils.js": {
-      "total": 76,
-      "success": 72,
-      "last": 1713909807415,
-      "lastSuccess": 1713909807415
+      "total": 77,
+      "success": 73,
+      "last": 1713915399848,
+      "lastSuccess": 1713915399848
     },
     "obb2.js": {
       "total": 5,
@@ -72573,10 +72611,10 @@
       "lastSuccess": 1712596641311
     },
     "owner-exec.js": {
-      "total": 31,
-      "success": 31,
-      "last": 1713907152057,
-      "lastSuccess": 1713907152057
+      "total": 32,
+      "success": 32,
+      "last": 1713915420534,
+      "lastSuccess": 1713915420534
     },
     "Adhan.js": {
       "total": 3,
@@ -72807,10 +72845,10 @@
       "lastSuccess": 1713881786765
     },
     "test.js": {
-      "total": 3,
-      "success": 3,
-      "last": 1713899786654,
-      "lastSuccess": 1713899786654
+      "total": 5,
+      "success": 4,
+      "last": 1713915408993,
+      "lastSuccess": 1713915408993
     },
     "sfp.js": {
       "total": 5,
