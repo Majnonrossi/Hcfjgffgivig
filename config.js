@@ -9,7 +9,7 @@ import moment from 'moment-timezone';
 import { en, es, id, ar, pt } from './lib/idiomas/total-idiomas.js';
 
 global.owner = [
-  ['212641207087', '𝙊𝙬𝙣𝙚𝙧', true], // owner
+  ['212696262219', '𝙊𝙬𝙣𝙚𝙧', true], // owner
   ['212705776824', 'abdo', true],
   ['212658323376', 'Develooper', true]
 ];
