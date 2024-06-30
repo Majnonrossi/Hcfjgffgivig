@@ -67643,7 +67643,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 5,
+      "exp": 12,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -67964,7 +67964,8 @@
         "progression": null,
         "step": null,
         "soal": null
-      }
+      },
+      "age": 0
     },
     "212775429348@s.whatsapp.net": {
       "counterPrivate": 0,
@@ -71764,6 +71765,25 @@
       "registered": false,
       "role": "*NOVATO(A)* 🪤",
       "exp": null
+    },
+    "212632222569@s.whatsapp.net": {
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "banned": false,
+      "BannedReason": "",
+      "Banneduser": false,
+      "limit": 15,
+      "level": 0,
+      "money": 150,
+      "premium": false,
+      "premiumTime": 0,
+      "name": "ROLANDO CR7",
+      "GBLanguage": 0,
+      "regTime": -1,
+      "registered": false,
+      "role": "*NOVATO(A)* 🪤",
+      "exp": 11
     }
   },
   "chats": {
@@ -72972,6 +72992,31 @@
       "expired": 0
     },
     "212608740306@s.whatsapp.net": {
+      "isBanned": false,
+      "welcome": true,
+      "detect": true,
+      "sWelcome": "",
+      "sBye": "",
+      "sPromote": "",
+      "sDemote": "",
+      "delete": true,
+      "antiver": true,
+      "modoadmin": false,
+      "antiLink": false,
+      "antiLink2": false,
+      "antiTiktok": false,
+      "antiYoutube": false,
+      "antiTelegram": false,
+      "antiFacebook": false,
+      "antiInstagram": false,
+      "antiTwitter": false,
+      "antifake": false,
+      "antiTraba": true,
+      "antitoxic": true,
+      "reaction": true,
+      "expired": 0
+    },
+    "212632222569@s.whatsapp.net": {
       "isBanned": false,
       "welcome": true,
       "detect": true,
