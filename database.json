@@ -71346,7 +71346,7 @@
       "regTime": -1,
       "registered": false,
       "role": "*NOVATO(A)* 🪤",
-      "exp": 165
+      "exp": 215
     },
     "94715973437@s.whatsapp.net": {
       "afk": -1,
@@ -73793,10 +73793,16 @@
       "lastSuccess": 1713997206722
     },
     "sf.js": {
-      "total": 5,
+      "total": 6,
       "success": 2,
-      "last": 1719684871315,
+      "last": 1719795778306,
       "lastSuccess": 1719684479753
+    },
+    "onoff.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1719795710561,
+      "lastSuccess": 1719795710561
     }
   },
   "msgs": {},
@@ -73827,7 +73833,7 @@
     "212660958030@s.whatsapp.net": {
       "self": false,
       "autoread": true,
-      "autoread2": false,
+      "autoread2": true,
       "restrict": false,
       "antiCall": true,
       "antiPrivate": false,
