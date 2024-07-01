@@ -1,39 +1,42 @@
 import fetch from 'node-fetch';
-import fs from 'fs/promises'; // استيراد مكتبة fs للعمليات على الملفات
 
+// ذاكرة مؤقتة لتخزين سجل المحادثات
+let conversationHistory = {};
+
+// المعالج الرئيسي
 var handler = async (m, { text, usedPrefix, command }) => {
   if (!text) {
-    return m.conn.reply(m.chat, `🎌 *Ingresé una petición*\n\nEx: hi jeen`, m, fake);
+    return m.conn.reply(m.chat, `🎌 *أدخل طلبًا*\n\nمثال: hi jeen`, m, fake);
   }
 
   try {
     m.conn.sendPresenceUpdate('composing', m.chat);
-    var apii = await fetch(`https://delirius-api-oficial.vercel.app/api/chatgpt?q=${text}`);
+
+    // إضافة الرسالة الجديدة إلى سجل المحادثة الخاصة بالمستخدم
+    if (!conversationHistory[m.chat]) {
+      conversationHistory[m.chat] = [];
+    }
+    conversationHistory[m.chat].push({ role: 'user', content: text });
+
+    // تحضير سجل المحادثة لطلب الـ API
+    const conversation = conversationHistory[m.chat].map(msg => msg.content).join('\n');
+
+    // استدعاء الـ API بسجل المحادثة الكامل
+    var apii = await fetch(`https://delirius-api-oficial.vercel.app/api/chatgpt?q=${conversation}`);
     var res = await apii.json();
+
+    // إضافة رد البوت إلى سجل المحادثة
+    conversationHistory[m.chat].push({ role: 'bot', content: res.data });
+
+    // إرسال الرد إلى المستخدم
     await m.reply(res.data);
-
-    // حفظ الرسالة في ملف JSON
-    var conversationLog = {
-      user: m.sender,
-      message: text,
-      response: res.data,
-      timestamp: Date.now()
-    };
-
-    // قراءة السجل الحالي من الملف
-    var currentLog = await fs.readFile('abdo.json', 'utf-8').catch(() => '[]');
-    var logs = JSON.parse(currentLog);
-    logs.push(conversationLog);
-
-    // كتابة السجل الجديد إلى الملف
-    await fs.writeFile('abdo.json', JSON.stringify(logs, null, 2));
   } catch (error) {
     console.error(error);
-    return m.conn.reply(m.chat, `*🚩 Ocurrió un fallo*`, m, fake);
+    return m.conn.reply(m.chat, `*🚩 حدث خطأ*`, m, fake);
   }
 };
 
-// This part is the corrected handler for all messages
+// هذا الجزء هو المعالج المصحح لجميع الرسائل
 handler.all = async (m) => {
   await handler(m, { text: m.text, usedPrefix: m.usedPrefix, command: m.command });
 };
