@@ -1,43 +1,56 @@
 import fetch from 'node-fetch';
 
-// ذاكرة مؤقتة لتخزين سجل المحادثات
-let conversationHistory = {};
+// إنشاء ذاكرة مؤقتة لتخزين المحادثات والأسماء
+let conversations = {};
 
-// المعالج الرئيسي
+// دالة لترجمة النص إلى الدارجة المغربية (يمكنك استخدام مكتبة ترجمة هنا)
+const translateToDarija = async (text) => {
+  // هنا يمكنك إضافة منطق الترجمة إلى الدارجة المغربية
+  // في هذا المثال، نفترض أن النص مدخل أصلاً بالدارجة المغربية
+  return text;
+};
+
 var handler = async (m, { text, usedPrefix, command }) => {
   if (!text) {
-    return m.conn.reply(m.chat, `🎌 *أدخل طلبًا*\n\nمثال: hi jeen`, m, fake);
+    return m.conn.reply(m.chat, `🎌 *Ingresé una petición*\n\nEx: hi jeen`, m, fake);
   }
 
   try {
     m.conn.sendPresenceUpdate('composing', m.chat);
 
-    // إضافة الرسالة الجديدة إلى سجل المحادثة الخاصة بالمستخدم
-    if (!conversationHistory[m.chat]) {
-      conversationHistory[m.chat] = [];
-    }
-    conversationHistory[m.chat].push({ role: 'user', content: text });
+    // ترجمة النص إلى الدارجة المغربية
+    const translatedText = await translateToDarija(text);
 
-    // تحضير سجل المحادثة لطلب الـ API
-    const conversation = conversationHistory[m.chat].map(msg => msg.content).join('\n');
-
-    // استدعاء الـ API بسجل المحادثة الكامل
-    var apii = await fetch(`https://delirius-api-oficial.vercel.app/api/chatgpt?q=${conversation}`);
+    // إرسال الطلب إلى API ChatGPT
+    var apii = await fetch(`https://delirius-api-oficial.vercel.app/api/chatgpt?q=${translatedText}`);
     var res = await apii.json();
+    let responseText = res.data;
 
-    // إضافة رد البوت إلى سجل المحادثة
-    conversationHistory[m.chat].push({ role: 'bot', content: res.data });
+    // حفظ المحادثة
+    if (!conversations[m.sender]) {
+      conversations[m.sender] = [];
+    }
+    conversations[m.sender].push({ text, response: responseText });
 
-    // إرسال الرد إلى المستخدم
-    await m.reply(res.data);
+    await m.reply(responseText);
   } catch (error) {
     console.error(error);
-    return m.conn.reply(m.chat, `*🚩 حدث خطأ*`, m, fake);
+    return m.conn.reply(m.chat, `*🚩 Ocurrió un fallo*`, m, fake);
   }
 };
 
-// هذا الجزء هو المعالج المصحح لجميع الرسائل
+// دالة للتعامل مع جميع الرسائل
 handler.all = async (m) => {
+  const userName = m.sender.split('@')[0]; // استخراج اسم المستخدم
+  const previousConversations = conversations[m.sender] || [];
+  
+  let introduction = `مرحبا ${userName}! كيف يمكنني مساعدتك اليوم؟`;
+
+  if (previousConversations.length > 0) {
+    introduction = `مرحبا مجددا ${userName}! تذكرت أنني تحدثت معك من قبل. كيف يمكنني مساعدتك اليوم؟`;
+  }
+
+  await m.conn.reply(m.chat, introduction, m, fake);
   await handler(m, { text: m.text, usedPrefix: m.usedPrefix, command: m.command });
 };
 
