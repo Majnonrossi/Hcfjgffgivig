@@ -1,56 +1,48 @@
 import fetch from 'node-fetch';
-
-// إنشاء ذاكرة مؤقتة لتخزين المحادثات والأسماء
-let conversations = {};
-
-// دالة لترجمة النص إلى الدارجة المغربية (يمكنك استخدام مكتبة ترجمة هنا)
-const translateToDarija = async (text) => {
-  // هنا يمكنك إضافة منطق الترجمة إلى الدارجة المغربية
-  // في هذا المثال، نفترض أن النص مدخل أصلاً بالدارجة المغربية
-  return text;
-};
+import fs from 'fs';
 
 var handler = async (m, { text, usedPrefix, command }) => {
   if (!text) {
-    return m.conn.reply(m.chat, `🎌 *Ingresé una petición*\n\nEx: hi jeen`, m, fake);
+    return m.reply(`🎌 *Ingrese una solicitud*\n\nEjemplo: hi jeen`);
   }
 
   try {
-    m.conn.sendPresenceUpdate('composing', m.chat);
-
-    // ترجمة النص إلى الدارجة المغربية
-    const translatedText = await translateToDarija(text);
-
-    // إرسال الطلب إلى API ChatGPT
-    var apii = await fetch(`https://delirius-api-oficial.vercel.app/api/chatgpt?q=${translatedText}`);
+    m.reply(`Espera un momento, estoy procesando tu solicitud...`);
+    var apii = await fetch(`https://delirius-api-oficial.vercel.app/api/chatgpt?q=${encodeURIComponent(text)}`);
     var res = await apii.json();
-    let responseText = res.data;
+    await m.reply(res.data);
 
-    // حفظ المحادثة
-    if (!conversations[m.sender]) {
-      conversations[m.sender] = [];
-    }
-    conversations[m.sender].push({ text, response: responseText });
-
-    await m.reply(responseText);
+    // Guardar la conversación en un archivo abdo.json
+    saveConversation(m.text, res.data);
   } catch (error) {
     console.error(error);
-    return m.conn.reply(m.chat, `*🚩 Ocurrió un fallo*`, m, fake);
+    return m.reply(`*🚩 Ocurrió un error*`);
   }
 };
 
-// دالة للتعامل مع جميع الرسائل
-handler.all = async (m) => {
-  const userName = m.sender.split('@')[0]; // استخراج اسم المستخدم
-  const previousConversations = conversations[m.sender] || [];
-  
-  let introduction = `مرحبا ${userName}! كيف يمكنني مساعدتك اليوم؟`;
+// Función para guardar la conversación en un archivo
+function saveConversation(request, response) {
+  const conversation = {
+    request: request,
+    response: response,
+    timestamp: new Date().toISOString()
+  };
 
-  if (previousConversations.length > 0) {
-    introduction = `مرحبا مجددا ${userName}! تذكرت أنني تحدثت معك من قبل. كيف يمكنني مساعدتك اليوم؟`;
+  const conversationsFile = 'abdo.json';
+
+  // Leer el archivo actual (si existe) y agregar la nueva conversación
+  let conversations = [];
+  if (fs.existsSync(conversationsFile)) {
+    conversations = JSON.parse(fs.readFileSync(conversationsFile));
   }
+  conversations.push(conversation);
 
-  await m.conn.reply(m.chat, introduction, m, fake);
+  // Escribir las conversaciones actualizadas en el archivo
+  fs.writeFileSync(conversationsFile, JSON.stringify(conversations, null, 2));
+}
+
+// Esta parte es el manejador corregido para todos los mensajes
+handler.all = async (m) => {
   await handler(m, { text: m.text, usedPrefix: m.usedPrefix, command: m.command });
 };
 
