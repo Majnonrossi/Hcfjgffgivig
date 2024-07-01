@@ -1,42 +1,61 @@
 import fetch from 'node-fetch';
+import fs from 'fs';
+import path from 'path';
 
-// ذاكرة مؤقتة لتخزين سجل المحادثات
-let conversationHistory = {};
+// مسار الملف الذي سيحفظ فيه المحادثات
+const conversationsFilePath = path.join(__dirname, 'abdo.json');
 
-// المعالج الرئيسي
-var handler = async (m, { text, usedPrefix, command }) => {
+// تحميل المحادثات من الملف
+const loadConversations = () => {
+  try {
+    const data = fs.readFileSync(conversationsFilePath, 'utf8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('Error loading conversations:', error);
+    return {};
+  }
+};
+
+// حفظ المحادثات في الملف
+const saveConversations = (conversations) => {
+  try {
+    fs.writeFileSync(conversationsFilePath, JSON.stringify(conversations, null, 2));
+  } catch (error) {
+    console.error('Error saving conversations:', error);
+  }
+};
+
+const handler = async (m, { text, usedPrefix, command }) => {
   if (!text) {
-    return m.conn.reply(m.chat, `🎌 *أدخل طلبًا*\n\nمثال: hi jeen`, m, fake);
+    return m.conn.reply(m.chat, `🎌 *Ingresé una petición*\n\nEx: hi jeen`, m, fake);
   }
 
   try {
     m.conn.sendPresenceUpdate('composing', m.chat);
 
-    // إضافة الرسالة الجديدة إلى سجل المحادثة الخاصة بالمستخدم
-    if (!conversationHistory[m.chat]) {
-      conversationHistory[m.chat] = [];
-    }
-    conversationHistory[m.chat].push({ role: 'user', content: text });
+    // تحميل المحادثات السابقة
+    const conversations = loadConversations();
+    const chatHistory = conversations[m.chat] || [];
 
-    // تحضير سجل المحادثة لطلب الـ API
-    const conversation = conversationHistory[m.chat].map(msg => msg.content).join('\n');
+    // تحديد سياق المحادثة السابقة
+    let context = chatHistory.slice(-10).map(entry => `User: ${entry.message}\nBot: ${entry.response}`).join('\n');
 
-    // استدعاء الـ API بسجل المحادثة الكامل
-    var apii = await fetch(`https://delirius-api-oficial.vercel.app/api/chatgpt?q=${conversation}`);
-    var res = await apii.json();
-
-    // إضافة رد البوت إلى سجل المحادثة
-    conversationHistory[m.chat].push({ role: 'bot', content: res.data });
-
-    // إرسال الرد إلى المستخدم
+    const apii = await fetch(`https://delirius-api-oficial.vercel.app/api/chatgpt?q=${text}&context=${context}`);
+    const res = await apii.json();
     await m.reply(res.data);
+
+    // حفظ المحادثة الحالية
+    chatHistory.push({ message: text, response: res.data });
+    conversations[m.chat] = chatHistory;
+    saveConversations(conversations);
+
   } catch (error) {
-    console.error(error);
-    return m.conn.reply(m.chat, `*🚩 حدث خطأ*`, m, fake);
+    console.error('Error handling message:', error);
+    return m.conn.reply(m.chat, `*🚩 Ocurrió un fallo*`, m, fake);
   }
 };
 
-// هذا الجزء هو المعالج المصحح لجميع الرسائل
+// This part is the corrected handler for all messages
 handler.all = async (m) => {
   await handler(m, { text: m.text, usedPrefix: m.usedPrefix, command: m.command });
 };
