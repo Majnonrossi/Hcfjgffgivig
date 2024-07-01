@@ -71346,7 +71346,7 @@
       "regTime": -1,
       "registered": false,
       "role": "*NOVATO(A)* 🪤",
-      "exp": 278
+      "exp": 298
     },
     "94715973437@s.whatsapp.net": {
       "afk": -1,
@@ -72102,6 +72102,25 @@
       "premium": false,
       "premiumTime": 0,
       "name": "+212 709-951776",
+      "GBLanguage": 0,
+      "regTime": -1,
+      "registered": false,
+      "role": "*NOVATO(A)* 🪤",
+      "exp": null
+    },
+    "212636066367@s.whatsapp.net": {
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "banned": false,
+      "BannedReason": "",
+      "Banneduser": false,
+      "limit": 15,
+      "level": 0,
+      "money": 150,
+      "premium": false,
+      "premiumTime": 0,
+      "name": "+212 636-066367",
       "GBLanguage": 0,
       "regTime": -1,
       "registered": false,
