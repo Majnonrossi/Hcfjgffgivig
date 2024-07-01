@@ -1,28 +1,31 @@
 import fetch from 'node-fetch';
 import fs from 'fs';
 
-var handler = async (m, { text, usedPrefix, command }) => {
+var handler = async (m, { text }) => {
   if (!text) {
     return m.reply(`🎌 *Ingrese una solicitud*\n\nEjemplo: hi jeen`);
   }
 
   try {
-    m.reply(`Espera un momento, estoy procesando tu solicitud...`);
+    m.reply(`تابعني:instagram.com/majnon._.98`);
     var apii = await fetch(`https://delirius-api-oficial.vercel.app/api/chatgpt?q=${encodeURIComponent(text)}`);
     var res = await apii.json();
+    
+    // إرسال الإجابة فقط
     await m.reply(res.data);
 
-    // Guardar la conversación en un archivo abdo.json
-    saveConversation(m.text, res.data);
+    // حفظ المحادثة في ملف JSON
+    saveConversation(m.chat, m.sender, m.text, res.data);
   } catch (error) {
     console.error(error);
     return m.reply(`*🚩 Ocurrió un error*`);
   }
 };
 
-// Función para guardar la conversación en un archivo
-function saveConversation(request, response) {
+// دالة لحفظ المحادثة في ملف JSON
+function saveConversation(chatId, userId, request, response) {
   const conversation = {
+    userId: userId,
     request: request,
     response: response,
     timestamp: new Date().toISOString()
@@ -30,20 +33,25 @@ function saveConversation(request, response) {
 
   const conversationsFile = 'abdo.json';
 
-  // Leer el archivo actual (si existe) y agregar la nueva conversación
-  let conversations = [];
+  // قراءة الملف الحالي إذا كان موجوداً، وإضافة المحادثة الجديدة
+  let conversations = {};
   if (fs.existsSync(conversationsFile)) {
     conversations = JSON.parse(fs.readFileSync(conversationsFile));
   }
-  conversations.push(conversation);
 
-  // Escribir las conversaciones actualizadas en el archivo
+  // تحقق من وجود سجل للمستخدم وإضافة المحادثة الجديدة
+  if (!conversations[chatId]) {
+    conversations[chatId] = [];
+  }
+  conversations[chatId].push(conversation);
+
+  // كتابة المحادثات المحدثة إلى الملف
   fs.writeFileSync(conversationsFile, JSON.stringify(conversations, null, 2));
 }
 
-// Esta parte es el manejador corregido para todos los mensajes
+// هذا الجزء هو المعالج المعدل لجميع الرسائل
 handler.all = async (m) => {
-  await handler(m, { text: m.text, usedPrefix: m.usedPrefix, command: m.command });
+  await handler(m, { text: m.text });
 };
 
 export default handler;
