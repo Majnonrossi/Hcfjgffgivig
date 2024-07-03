@@ -93359,7 +93359,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 21,
+      "exp": 145,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -93705,7 +93705,7 @@
       "lastrampok": 0,
       "lastsda": 0,
       "lastwar": 0,
-      "spam": 0,
+      "spam": 1719983627311,
       "pancing": 0,
       "pertambangan": 0,
       "pertanian": 0,
@@ -97708,10 +97708,10 @@
       "lastSuccess": 1713997206722
     },
     "apk.js": {
-      "total": 150,
-      "success": 140,
-      "last": 1719979663388,
-      "lastSuccess": 1719979663388
+      "total": 157,
+      "success": 145,
+      "last": 1719983627517,
+      "lastSuccess": 1719983608490
     },
     "onoff.js": {
       "total": 2,
