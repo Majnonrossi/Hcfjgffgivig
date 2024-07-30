@@ -1,100 +1,109 @@
-import fg from 'api-dylux';
-import fetch from 'node-fetch';
-import {savefrom, facebookdl, facebookdlv2} from '@bochilteam/scraper';
-import fbDownloader from 'fb-downloader-scrapper';
-import {facebook} from '@xct007/frieren-scraper';
-import axios from 'axios';
-const handler = async (m, {conn, args, command, usedPrefix}) => {
-if (!args[0]) return conn.reply(m.chat, `${lenguajeGB['smsAvisoMG']()}${mid.smsMalused5}\n${usedPrefix + command} https://www.facebook.com/watch?v=636541475139`, fkontak, m)
-if (!args[0].match(/www.facebook.com|fb.watch/g)) return conn.reply(m.chat, `${lenguajeGB['smsAvisoMG']()}${mid.smsMalused5}\n${usedPrefix + command} https://www.facebook.com/watch?v=636541475139*`, fkontak, m)
-m.react(`⌛`) 
-await conn.reply(m.chat, `${lenguajeGB['smsAvisoEG']()}${mid.smsfb2}`, fkontak, m)
-try {
-const d2ata = await facebook.v1(args[0]);
-let r2es = '';
-if (d2ata.urls && d2ata.urls.length > 0) {
-r2es = `${d2ata.urls[0]?.hd || d2ata.urls[1]?.sd || ''}` }
-await conn.sendFile(m.chat, r2es, 'error.mp4', `✅ ${mid.smsfb}\n${wm}`, m);
-m.react(`✅`) 
-handler.limit = 3
-} catch (err1) {
-try {
-const req = await igeh(args[0]);
-conn.sendMessage(m.chat, {video: {url: req.url_list}}, m);
-handler.limit = 3
-} catch (err1_2) {
-try {
-const Rres = await fetch(`https://api.lolhuman.xyz/api/facebook?apikey=${lolkeysapi}&url=${args[0]}`);
-const Jjson = await Rres.json();
-let VIDEO = Jjson.result[0];
-if (VIDEO == '' || !VIDEO || VIDEO == null) VIDEO = Jjson.result[1];
-await conn.sendFile(m.chat, VIDEO, 'error.mp4', `✅ ${mid.smsfb}\n${wm}`, m);
-m.react(`✅`) 
-handler.limit = 3
-} catch (err2) {
-try {
-const ress = await fg.fbdl(args[0]);
-const urll = await ress.data[0].url;
-await conn.sendFile(m.chat, urll, 'error.mp4', `✅ ${mid.smsfb}\n${wm}`, m);
-m.react(`✅`) 
-handler.limit = 3
-} catch (err3) {
-try {
-const res = await fbDownloader(args[0]);
-for (const result of res.download) {
-const ur = result.url;
-await conn.sendFile(m.chat, ur, 'error.mp4', `✅ ${mid.smsfb}\n${wm}`, m);         
-m.react(`✅`)               
-handler.limit = 3
-}} catch (err4) {
-try {
-const res3 = await fetch(`https://latam-api.vercel.app/api/facebookdl?apikey=nekosmic&q=${args[0]}`);
-const json = await res3.json();
-const url3 = await json.video;
-await conn.sendFile(m.chat, url3, 'error.mp4', `✅ ${mid.smsfb}\n${wm}`, m);
-m.react(`✅`)               
-handler.limit = 3
-} catch (err5) {
-try {
-const {result} = await facebookdl(args[0]).catch(async (_) => await facebookdlv2(args[0])).catch(async (_) => await savefrom(args[0]));
-for (const {url, isVideo} of result.reverse()) await conn.sendFile(m.chat, url, 'error.mp4', `✅ ${mid.smsfb}\n${wm}`, m);
-m.react(`✅`)                 
-handler.limit = 3
-} catch (err6) {
-await conn.reply(m.chat, `${lenguajeGB['smsMalError3']()}#report ${lenguajeGB['smsMensError2']()} ${usedPrefix + command}\n\n${wm}`, fkontak, m)
-console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
-console.log(err6)
-handler.limit = false
-}}}}}}}}
-handler.help = ['fb', 'facebook', 'fbdl']
-handler.tags = ['downloader']
-handler.command = /^(facebook|fb|facebookdl|fbdl|facebook2|fb2|facebookdl2|fbdl2|facebook3|fb3|facebookdl3|fbdl3|facebook4|fb4|facebookdl4|fbdl4|facebook5|fb5|facebookdl5|fbdl5)$/i
-//handler.limit = 3 
-export default handler
-
-async function igeh(url_media) {
-  return new Promise(async (resolve, reject)=>{
-    const BASE_URL = 'https://instasupersave.com/';
-    try {
-      const resp = await axios(BASE_URL);
-      const cookie = resp.headers['set-cookie']; // get cookie from request
-      const session = cookie[0].split(';')[0].replace('XSRF-TOKEN=', '').replace('%3D', '');
-      const config = {method: 'post', url: `${BASE_URL}api/convert`, headers: {'origin': 'https://instasupersave.com', 'referer': 'https://instasupersave.com/pt/', 'sec-fetch-dest': 'empty', 'sec-fetch-mode': 'cors', 'sec-fetch-site': 'same-origin', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.52', 'x-xsrf-token': session, 'Content-Type': 'application/json', 'Cookie': `XSRF-TOKEN=${session}; instasupersave_session=${session}`}, data: {url: url_media}};
-      axios(config).then(function(response) {
-        const ig = [];
-        if (Array.isArray(response.data)) {
-          response.data.forEach((post) => {
-            ig.push(post.sd === undefined ? post.thumb : post.sd.url);
-          });
-        } else {
-          ig.push(response.data.url[0].url);
-        }
-        resolve({results_number: ig.length, url_list: ig});
-      }).catch(function(error) {
-        reject(error.message);
-      });
-    } catch (e) {
-      reject(e.message);
+import _0xa5f472 from "axios";
+import _0x425fbc from "cheerio";
+let handler = async (_0x4a374a, {
+  conn: _0x2392e8,
+  command: _0x398195,
+  args: _0x1588a0,
+  text: _0x4b93c5,
+  usedPrefix: _0x5b9b61
+}) => {
+  let _0x3ce183 = "[!] التحميل من الفيسبوك على شكل فيديو او مقطع صوتي نكتب الامر متبوع ب صيغة التي تريدها ثم  رابط الفيديو مثال :\n\n\t• hd\n\t• audio\n\n" + (_0x5b9b61 + _0x398195) + " hd https://www.facebook.com/100063533185520/videos/1177527700278287";
+  if (!_0x4b93c5) {
+    return _0x4a374a.reply(_0x3ce183);
+  }
+  const {
+    code: _0x1cda34,
+    title: _0x3cea52,
+    link: _0x54d5f9,
+    hd: _0x39a5e1,
+    audio: _0x111070
+  } = await facebook(_0x1588a0[1] || _0x1588a0[0] || _0x4b93c5);
+  if (_0x1cda34 !== 200) {
+    throw "ups.. server down";
+  }
+  await _0x2392e8.sendMessage(_0x4a374a.chat, {
+    react: {
+      text: "🕑",
+      key: _0x4a374a.key
     }
+  });
+  const _0x6f1cb2 = {
+    url: _0x54d5f9
+  };
+  if (_0x1588a0[0] == "hd") {
+    await _0x2392e8.sendMessage(_0x4a374a.chat, {
+      react: {
+        text: "✅",
+        key: _0x4a374a.key
+      }
+    });
+    const _0xa2c1cd = {
+      url: _0x39a5e1
+    };
+    const _0x3354fd = {
+      video: _0xa2c1cd,
+      caption: "乂 *F A C E B O O K*\n\n" + _0x3cea52 + "\n\n*quality*: HD\n*url*: " + _0x1588a0[1] + "\n\n\n "
+    };
+    await _0x2392e8.sendMessage(_0x4a374a.chat, _0x3354fd, {
+      quoted: _0x4a374a
+    });
+  } else if (_0x1588a0[0] == "audio") {
+    await _0x2392e8.sendMessage(_0x4a374a.chat, {
+      react: {
+        text: "✅",
+        key: _0x4a374a.key
+      }
+    });
+    const _0x2a54e0 = {
+      url: _0x111070
+    };
+    const _0x59cc4f = {
+      audio: _0x2a54e0,
+      mimetype: "audio/mpeg",
+      ptt: false
+    };
+    await _0x2392e8.sendMessage(_0x4a374a.chat, _0x59cc4f, {
+      quoted: _0x4a374a
+    });
+  } else {
+    await _0x2392e8.sendMessage(_0x4a374a.chat, {
+      video: _0x6f1cb2,
+      caption: "乂 *F A C E B O O K*\n\n" + _0x3cea52 + "\n\n*url*: " + _0x1588a0[0] + "\n\n\n "
+    }, {
+      quoted: _0x4a374a
+    });
+  }
+};
+handler.help = ["facebook audio", "facebook hd", "facebook"].map(_0x26c89f => "faceebook2 " + _0x26c89f);
+handler.tags = ["downloader"];
+handler.command = /^(facebook|fbdl|fb|facebookdl2)$/i;
+export default handler;
+async function facebook(_0x29342e) {
+  return new Promise((_0x367d42, _0x201572) => {
+    const _0x3facda = {
+      url: _0x29342e
+    };
+    _0xa5f472.post("https://www.getfvid.com/downloader", new URLSearchParams(Object.entries(_0x3facda)), {
+      headers: {
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "user-agent": "Mozilla/5.0 (Linux; Android 6.0.1; SM-G532G) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Mobile Safari/537.36"
+      }
+    }).then(({
+      data: _0x543135
+    }) => {
+      const _0x3a2acc = _0x425fbc.load(_0x543135);
+      const _0x4af063 = {
+        code: 200
+      };
+      _0x4af063.title = _0x3a2acc("div.download-links > div.card > div.row > div:nth-child(2) > div > h5 > a").text();
+      _0x4af063.hd = _0x3a2acc("div.download-links > div.card > div.row > div.col-md-4.btns-download > p:nth-child(1) > a").attr("href");
+      _0x4af063.link = _0x3a2acc("div.download-links > div.card > div.row > div.col-md-4.btns-download > p:nth-child(1) > a").attr("href");
+      _0x4af063.audio = _0x3a2acc("div.download-links > div.card > div.row > div.col-md-4.btns-download > p:nth-child(1) > a").attr("href");
+      _0x367d42(_0x4af063);
+    }).catch(_0x46442d => _0x201572({
+      code: 503,
+      status: false,
+      result: _0x46442d
+    }));
   });
 }
