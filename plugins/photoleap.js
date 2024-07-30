@@ -11,7 +11,7 @@ let handler = async (_0x7c0d90, {
   } else if (_0x7c0d90.quoted && _0x7c0d90.quoted.text) {
     _0x2de0ef = _0x7c0d90.quoted.text;
   } else {
-    throw "الذكاء الاصطناعي : يمكنك ان تتخيل اي صورة ثم اطلب من البوت ان يرسمها مثال نكتب له ان يتخيل صورة فتاة تلعب مع قطة نكتب هكذا : \n\n*.photoleap* girl play with black cat";
+    throw "الذكاء الاصطناعي : يمكنك ان تتخيل اي صورة ثم اطلب من البوت ان يرسمها مثال نكتب له ان يتخيل صورة فتاة تلعب مع قطة نكتب هكذا : \n\n*.jeenmaker* girl play with black cat";
   }
   await _0x7c0d90.reply("> انتظر ....");
   try {
@@ -27,7 +27,7 @@ let handler = async (_0x7c0d90, {
 };
 handler.help = ["photoleap"];
 handler.tags = ["drawing"];
-handler.command = /^(photoleap)$/i;
+handler.command = /^(jeenmaker)$/i;
 handler.premium = false;
 export default handler;
 async function textToImage(_0x5993d2) {
