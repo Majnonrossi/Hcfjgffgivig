@@ -37,7 +37,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 
 handler.help = ['pinterest3']
 handler.tags = ['downloader']
-handler.command = /^pinterest3$/i
+handler.command = /^pinterest$/i
 
 export default handler
 
