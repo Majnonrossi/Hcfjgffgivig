@@ -35,6 +35,7 @@ _*< الاوامر />*_
 ┣ ඬ⃟ 🤖 _${usedPrefix}fb_
 ┣ ඬ⃟ 🤖 _${usedPrefix}play_
 ┣ ඬ⃟ 🤖 _${usedPrefix}tiktok_
+┣ ඬ⃟ 🤖 _${usedPrefix}video_
 ┏━━━━━━━━━━┓
 ┣ الذكاء الاصطناعي
 ┗━━━━━━━━━━┛
@@ -42,6 +43,7 @@ _*< الاوامر />*_
 ┣ ඬ⃟ 🤖 _${usedPrefix}openai_
 ┣ ඬ⃟ 🤖 _${usedPrefix}jeenmaker_
 ┣ ඬ⃟ 🤖 _${usedPrefix}aivoice_
+┣ ඬ⃟ 🤖 _${usedPrefix}jeenai_
 ┏━━━━━━━━━━┓
 ┣ *الاسلام*
 ┗━━━━━━━━━━┛
@@ -58,7 +60,9 @@ _*< الاوامر />*_
 ┣ ඬ⃟ 🤖 _${usedPrefix}kora_
 ┣ ඬ⃟ 🤖 _${usedPrefix}kitab_
 ┣ ඬ⃟ 🤖 _${usedPrefix}tozombie
-┣ ඬ⃟ 🤖 _${usedPrefix}kick_
+┣ ඬ⃟ 🤖 _${usedPrefix}book_
+┣ ඬ⃟ 🤖 _${usedPrefix}storyset_
+┣ ඬ⃟ 🤖 _${usedPrefix}tourl_
 ┏━━━━━━━━━━┓
 ┣ من غوغل
 ┗━━━━━━━━━━┛
@@ -85,7 +89,7 @@ https://whatsapp.com/channel/0029VaiJnhbD38CbP5YcSK0K
 
 ┗━━━━━━━━━┛
 
-> _ayoub_x5 & majnon._.98`.trim().replace('%readMore', readMore);
+> by  _ayoub_x5 & majnon._.98`.trim().replace('%readMore', readMore);
 
     // Generate the menu image
     const image = await generateMenuImage();
