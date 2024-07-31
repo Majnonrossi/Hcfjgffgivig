@@ -5,7 +5,7 @@ const handler = async (_0x21a7ae, {
   command: _0x28023d
 }) => {
   if (!_0x4ecf54) {
-    throw "مثال„ :\n\n*.openai hello*";
+    throw "مثال„ :\n\n*.jeenai hello*";
   }
   const _0x14c562 = "Hi I am Jeen Whatsapp Bot Developed by majnon and ayoub, My name is Jeen bot, I was created by ayoub x5 and majnon._.98 with unparalleled perfection, If you want to know more about my owner Visit https://whatsapp.com/channel/0029VaiJnhbD38CbP5YcSK0K";
   await _0x21a7ae.reply(wait);
@@ -17,7 +17,7 @@ const handler = async (_0x21a7ae, {
     _0x21a7ae.reply("حدث خطا");
   }
 };
-handler.command = handler.help = ["ai","Jeenai"];
+handler.command = handler.help = ["jeenai","aijeen"];
 handler.tags = ["ai"];
 handler.premium = false;
 export default handler;
