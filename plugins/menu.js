@@ -8,32 +8,69 @@ const handler = async (m, { conn, usedPrefix, isPrems }) => {
     const readMore = more.repeat(850);
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
 
-    m.react('📚');
+    m.react('🤩');
 
-    const str = `▢ *Hello 👋,* ${taguser}
+    const str = `▢ *مرحبا 👋,* ${taguser}
 
-_*< Info JEEN-MD />*_
+_*< معلومات JEEN-MD />*_
 
-▢ *Total Users : ${totalUsers}*
+▢ *عدد المستخدمين : ${totalUsers}*
 
-_*< Your Account />*_
+_*< حسابك />*_
 
-▢ *Level :* ${level}
-▢ *Exp :* ${exp}
-▢ *Diamantes :* ${limit}
-▢ *Premium :* ${isPrems ? '✅' : '❌'}
-▢ *Registrado :* ${true ? '✅' : '❌'}\n${readMore}
+▢ *المستوى :* ${level}
+▢ *اكس بي :* ${exp}
+▢ *الجواهر :* ${limit}
+▢ *عضوية :* ${isPrems ? '✅' : '❌'}
+▢ *تسجيل :* ${true ? '✅' : '❌'}\n${readMore}
 
-_*< Bot Commands />*_
+_*< الاوامر />*_
+┏━━━━━━━━━━┓
+┣ *السلام عليكم , ${taguser}*
+┗━━━━━━━━━━┛
+┏━━━━━━━━━━┓
+┣ ඬ⃟ 🤖 _${usedPrefix}apk_
+┣ ඬ⃟ 🤖 _${usedPrefix}ig_
+┣ ඬ⃟ 🤖 _${usedPrefix}pinterest_
+┣ ඬ⃟ 🤖 _${usedPrefix}fb_
+┣ ඬ⃟ 🤖 _${usedPrefix}play_
+┣ ඬ⃟ 🤖 _${usedPrefix}tiktok_
+┏━━━━━━━━━━┓
+┣ الذكاء الاصطناعي
+┗━━━━━━━━━━┛
+┣ ඬ⃟ 🤖 _${usedPrefix}chatgpt_
+┣ ඬ⃟ 🤖 _${usedPrefix}jeenmaker_
+┣ ඬ⃟ 🤖 _${usedPrefix}aivoice_
+┏━━━━━━━━━━┓
+┣ *القران*
+┗━━━━━━━━━━┛
+┣ ඬ⃟ 🤖 _${usedPrefix}ayati_
+┣ ඬ⃟ 🤖 _${usedPrefix}asmaeallah_
+┏━━━━━━━━━━┓
+┣ *كتب و صور*
+┗━━━━━━━━━━┛
+┣ ඬ⃟ 🤖 _${usedPrefix}hd_
+┣ ඬ⃟ 🤖 _${usedPrefix}recolor_
+┣ ඬ⃟ 🤖 _${usedPrefix}tofanime_
+┣ ඬ⃟ 🤖 _${usedPrefix}logo_
+┣ ඬ⃟ 🤖 _${usedPrefix}animestory_
+┣ ඬ⃟ 🤖 _${usedPrefix}kora_
+┣ ඬ⃟ 🤖 _${usedPrefix}kitab_
+┣ ඬ⃟ 🤖 _${usedPrefix}tozombie
+┣ ඬ⃟ 🤖 _${usedPrefix}kick_
 
-▢ *_/apk_*
-▢ *_/mediafire_*
-▢ *_/yts_*
-▢ *_/play_*
-▢ *_/bing_*
-▢ *_/chatbot_*
-▢ *_/ronaldo_*
-▢ *_/messi_*`.trim().replace('%readMore', readMore);
+┏━━━━━━━━━━┓
+┣ *القنوات*
+┗━━━━━━━━━━┛
+┏━━━━━━━━━━┓
+instagram.com/majnon._.98
+
+instagram.com/_ayoub_x5
+
+https://whatsapp.com/channel/0029VaiJnhbD38CbP5YcSK0K
+
+
+┗━━━━━━━━━┛`.trim().replace('%readMore', readMore);
 
     // Generate the menu image
     const image = await generateMenuImage();
