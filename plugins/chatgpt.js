@@ -1,23 +1,46 @@
-import _0x5a033e from "node-fetch";
-const handler = async (_0x21a7ae, {
-  text: _0x4ecf54,
-  usedPrefix: _0x4c148d,
-  command: _0x28023d
+import _0x23915c from "node-fetch";
+let handler = async (_0x12fe9b, {
+  conn: _0x2db223,
+  args: _0x4fdf19,
+  usedPrefix: _0x5014f9,
+  text: _0x2100ef,
+  command: _0x495cb4
 }) => {
-  if (!_0x4ecf54) {
-    throw "مثال„ :\n\n*.openai hello*";
+  if (!_0x2100ef) {
+    return _0x12fe9b.reply("هذا الامر خاص بالسؤال . يمكنك ان تسأل الذكاء الاصطناعي\nمثال:\n\n *.chatgpt* hello");
   }
-  const _0x14c562 = "Hi I am Jeen Whatsapp Bot Developed by majnon and ayoub, My name is Jeen bot, I was created by ayoub x5 and majnon._.98 with unparalleled perfection, If you want to know more about my owner Visit https://whatsapp.com/channel/0029VaiJnhbD38CbP5YcSK0K";
-  await _0x21a7ae.reply(wait);
-  const _0x534daa = await _0x5a033e("https://api.betabotz.eu.org/api/search/openai-logic?text=" + _0x4ecf54 + "&logic=" + _0x14c562 + "&apikey=ZnGvIADT");
-  const _0x3f454e = await _0x534daa.json();
+  await _0x12fe9b.reply(wait);
   try {
-    await _0x21a7ae.reply(_0x3f454e.message);
-  } catch (_0x58d89e) {
-    _0x21a7ae.reply("حدث خطا");
+    const _0x2b03c3 = await fetchCompletion(_0x2100ef);
+    await _0x12fe9b.reply(_0x2b03c3);
+  } catch (_0x56a618) {
+    await _0x12fe9b.reply("error");
   }
 };
-handler.command = handler.help = ["openai","chatgpt"];
+handler.help = ["chatgpt"];
 handler.tags = ["ai"];
-handler.premium = false;
+handler.command = /^(chatgpt)$/i;
 export default handler;
+async function fetchCompletion(_0x319f1a) {
+  try {
+    const _0x522b6a = "https://api.chatanywhere.com.cn/v1/chat/completions";
+    const _0x4ac43a = await _0x23915c(_0x522b6a, {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer sk-pu4PasDkEf284PIbVr1r5jn9rlvbAJESZGpPbK7OFYYR6m9g",
+        "Content-Type": "application/json;charset=UTF-8"
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [{
+          role: "user",
+          content: _0x319f1a
+        }]
+      })
+    });
+    const _0x1aa5bf = await _0x4ac43a.json();
+    return _0x1aa5bf.choices[0].message.content;
+  } catch (_0x5ccb58) {
+    throw _0x5ccb58;
+  }
+}
