@@ -39,10 +39,11 @@ _*< الاوامر />*_
 ┣ الذكاء الاصطناعي
 ┗━━━━━━━━━━┛
 ┣ ඬ⃟ 🤖 _${usedPrefix}chatgpt_
+┣ ඬ⃟ 🤖 _${usedPrefix}openai_
 ┣ ඬ⃟ 🤖 _${usedPrefix}jeenmaker_
 ┣ ඬ⃟ 🤖 _${usedPrefix}aivoice_
 ┏━━━━━━━━━━┓
-┣ *القران*
+┣ *الاسلام*
 ┗━━━━━━━━━━┛
 ┣ ඬ⃟ 🤖 _${usedPrefix}ayati_
 ┣ ඬ⃟ 🤖 _${usedPrefix}asmaeallah_
@@ -58,19 +59,33 @@ _*< الاوامر />*_
 ┣ ඬ⃟ 🤖 _${usedPrefix}kitab_
 ┣ ඬ⃟ 🤖 _${usedPrefix}tozombie
 ┣ ඬ⃟ 🤖 _${usedPrefix}kick_
-
+┏━━━━━━━━━━┓
+┣ من غوغل
+┗━━━━━━━━━━┛
+┣ ඬ⃟ 🤖 _${usedPrefix}google_
+┣ ඬ⃟ 🤖 _${usedPrefix}tr_
+┣ ඬ⃟ 🤖 _${usedPrefix}tts_
+┏━━━━━━━━━━┓
+┣ ملصقاات
+┗━━━━━━━━━━┛
+┣ ඬ⃟ 🤖 _${usedPrefix}sticker_
+┣ ඬ⃟ 🤖 _${usedPrefix}emojimix_
+┣ ඬ⃟ 🤖 _${usedPrefix}attp_
 ┏━━━━━━━━━━┓
 ┣ *القنوات*
-┗━━━━━━━━━━┛
-┏━━━━━━━━━━┓
+
 instagram.com/majnon._.98
 
+
 instagram.com/_ayoub_x5
+
 
 https://whatsapp.com/channel/0029VaiJnhbD38CbP5YcSK0K
 
 
-┗━━━━━━━━━┛`.trim().replace('%readMore', readMore);
+┗━━━━━━━━━┛
+
+> _ayoub_x5 & majnon._.98`.trim().replace('%readMore', readMore);
 
     // Generate the menu image
     const image = await generateMenuImage();
