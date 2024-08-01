@@ -20,4 +20,6 @@ const handler = async (_0x21a7ae, {
 handler.command = handler.help = ["jeenai","aijeen"];
 handler.tags = ["ai"];
 handler.premium = false;
+handler.limit = 1
 export default handler;
+
