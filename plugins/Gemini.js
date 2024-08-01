@@ -16,4 +16,5 @@ let handler = async (_0x186a2c, {
 handler.help = ["gemini"];
 handler.tags = ["ai"];
 handler.command = /^gemini?$/i;
+handler.limit = 5
 export default handler;
