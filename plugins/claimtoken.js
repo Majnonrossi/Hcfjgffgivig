@@ -1,6 +1,6 @@
 // tokenUtils.js
 const generateToken = (numGems) => {
-  const prefix = 'idriss';
+  const prefix = 'jeen';
   const token = `${prefix}-${Math.random().toString(36).substr(2, 9)}-${numGems}`;
   return token;
 };
