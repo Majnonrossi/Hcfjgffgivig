@@ -61,7 +61,7 @@ handler.limit = 0 //No gastada limite si fallas
 handler.help = ['audio' , 'video'].map(v => v + ' <texto>')
 handler.tags = ['downloader']
 handler.command = ['audio', 'video']
-handler.limit = false
+handler.limit = 3
 export default handler
 
 function bytesToSize(bytes) {
