@@ -54,14 +54,14 @@ global.redesMenu = [canal1, canal2, canal3, canal4, soporteGB, grupo1, grupo2, g
 global.accountsgb = [canal1, canal2, canal3, canal4, tk, ig, yt, paypal, fb, ths, md, asistencia].getRandom()
 
 var canalesInfo = [
-{ link: canal1, id: "120363160031023229@newsletter", name: "JEEN " },
-{ link: canal2, id: "120363169294281316@newsletter", name: "JEN" },
-{ link: canal3, id: "120363203805910750@newsletter", name: "JEEN" } 
+{ link: canal1, id: "120363040533431344@newsletter", name: "JEEN " },
+{ link: canal2, id: "120363040533431344@newsletter", name: "JEN" },
+{ link: canal3, id: "120363040533431344@newsletter", name: "JEEN" } 
 ]
 var indiceAleatorio = Math.floor(Math.random() * canalesInfo.length)
 var channelRD = canalesInfo[indiceAleatorio]
 
-global.canalIdGB = ["120363160031023229@newsletter", "120363169294281316@newsletter", "120363203805910750@newsletter", "120363302472386010@newsletter"]
+global.canalIdGB = ["120363040533431344@newsletter", "120363040533431344@newsletter", "120363040533431344@newsletter", "120363040533431344@newsletter"]
 global.canalNombreGB = ["majnon tech ✨"]
 global.channelRD = await getRandomChannel()
 
