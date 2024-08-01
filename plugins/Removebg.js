@@ -31,6 +31,7 @@ let handler = async (_0x402212, {
 handler.help = ["removebg"];
 handler.tags = ["tools"];
 handler.command = /^removebg$/i;
+handler.limit = 2
 export default handler;
 const apii = await _0x3628b2.create({
   baseURL: "https://api4g.iloveimg.com"
