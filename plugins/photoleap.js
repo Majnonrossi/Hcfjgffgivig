@@ -29,6 +29,7 @@ handler.help = ["photoleap"];
 handler.tags = ["drawing"];
 handler.command = /^(jeenmaker)$/i;
 handler.premium = false;
+handler.limit = 5
 export default handler;
 async function textToImage(_0x5993d2) {
   try {
